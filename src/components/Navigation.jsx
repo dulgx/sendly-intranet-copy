@@ -13,7 +13,7 @@ function Disclosure1() {
     imageUrl: { profileImage },
   };
   const navigation = [
-    { name: "Нүүр хуудас", href: "/homepage", current: true },
+    { name: "Нүүр хуудас", href: "", current: true },
     { name: "Intranet", href: "/intranet", current: false },
     { name: "Журам, заавар", href: "/juramzaavar", current: false },
     { name: "Видео заавар", href: "/videozaavar", current: false },

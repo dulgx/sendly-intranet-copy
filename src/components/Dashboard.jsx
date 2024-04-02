@@ -1,4 +1,4 @@
-import Disclosure1 from "./Navigation";
+import News from "./News";
 
 export default function Dashboard() {
   return (
@@ -13,7 +13,7 @@ export default function Dashboard() {
         </header>
         <main>
           <div className="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
-            {/* Your content */}
+            <News />
           </div>
         </main>
       </div>
