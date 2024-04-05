@@ -1,7 +1,11 @@
 import React from "react";
 
 function Intranet() {
-  return <div>Hello World!</div>;
+  return <>
+    <section>
+      
+    </section>
+  </>;
 }
 
 export default Intranet;
