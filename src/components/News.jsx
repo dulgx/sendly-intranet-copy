@@ -53,8 +53,14 @@ const posts = [
         },
       },
   ]
+
+  
   
   export default function News() {
+    const styles = {
+      backgroundImage: "linear-gradient(to right, #a1c4fd 0%, #c2e9fb 51%, #a1c4fd 100%)",
+    };
+
     return (
       <div className="bg-white sm:pb-2">
         <div >

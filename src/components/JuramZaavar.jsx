@@ -1,5 +1,5 @@
 import { BiFolder } from "react-icons/bi";
-import { FaRegFolderOpen } from "react-icons/fa6"
+import folderIcon from '../assets/folder.png'
 
 const posts = [
   {
@@ -72,20 +72,15 @@ export default function JuramZaavar() {
     <div className="bg-white sm:pb-2 mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
         <div className="grid max-w-2xl grid-cols-1 gap-x-8 gap-y-10 pt-10  lg:mx-0 lg:max-w-none lg:grid-cols-3">
           {posts.map((post) => (
-            <article key={post.id} className="bg-stone-100  flex max-w-xl flex-col items-start justify-between p-5 rounded-xl shadow">
-              <div className="group relative">
-              <BiFolder size={25}/>
-                <h3 className="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600 flex">
+            <article key={post.id} className="bg-stone-100  flex max-w-xl flex-col items-start justify-between p-5 rounded-xl shadow hover:bg-sky-50 cursor-pointer">
+              <div className="group relative flex flex-row items-center">
+                <img src={folderIcon} alt="folder" className='w-14'/>
+                <h3 className="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600 flex ml-8">
                   <a href={post.href}>
                     <span className="absolute inset-0" />
                     {post.title}
                   </a>
                 </h3>
-                <p className="mt-5 line-clamp-3 text-sm leading-6 text-gray-600"> 
-                {post.description}</p>
-              </div>
-              <div className="flex items-center font-semibold gap-x-4 text-xs p-2 rounded-lg shadow-md my-2 bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 text-white   ">
-                <button className="">Цааш үзэх</button>
               </div>
             </article>
           ))}

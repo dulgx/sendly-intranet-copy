@@ -12,7 +12,7 @@ function App() {
 
   return (
     <>
-      <Router>
+      <Router >
         <Disclosure1 />
         <Routes>
           <Route path="" element={<Dashboard />} />
