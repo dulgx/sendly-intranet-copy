@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import CompanyData from "../assets/salbar.json";
 import Employee from '../assets/employee.json'
+import Grouped from "./SalbaraarHaih";
 
 function Intranet() {
   const companyData = CompanyData.companies;
@@ -8,8 +9,8 @@ function Intranet() {
   
   return (
     <>
-      <section className='flex w-full'>
-        <div className="text-sm m-5 min-w-60 overflow-y-scroll">
+      <section className='flex w-full overflow-hidden h-100'>
+        <div className="text-sm m-5 min-w-60">
           <ul>
             {companyData.map((company) => (
               <li key={company.name}>
@@ -37,8 +38,8 @@ function Intranet() {
           </ul>
         </div>
 
-        <div className="mt-5 flex w-full" >
-          <form class="max-w-md mx-auto w-72 h-24">   
+        <div className="mt-5 flex w-full justify-evenly sticky ">
+          <form class="max-w-md w-72">   
               <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Хайх</label>
               <div class="relative">
                   <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
@@ -50,10 +51,7 @@ function Intranet() {
                   <button type="submit" class="text-white absolute end-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Хайх</button>
               </div>
           </form>
-
-          <div>
-            
-          </div>
+          <Grouped />
         </div>
       </section>
     </>
