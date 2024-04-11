@@ -1,6 +1,5 @@
 import folderIcon from "../assets/folder.png";
 import { Link } from "react-router-dom";
-import ZeelUA from "./Juramuud/items";
 
 const posts = [
   {

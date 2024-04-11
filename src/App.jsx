@@ -7,10 +7,27 @@ import Intranet from "./components/Intranet";
 import JuramZaavar from "./components/JuramZaavar";
 import VideoZaavar from "./components/VideoZaavar";
 import ZeelUA from "./components/Juramuud/items";
+import data from "./json-files/juram-data.json";
+
+const allGarchigData = [
+  ...data.ZUA,
+  ...data.ZChiglel,
+  ...data.SalbarUA,
+  ...data.NBB,
+  ...data.HR,
+  ...data.ENuhtsul,
+  ...data.Contract,
+  ...data.Blank,
+];
 
 function App() {
-  const [count, setCount] = useState(0);
-
+  const itemRoutes = allGarchigData.map((_, index) => (
+    <Route
+      key={index}
+      path={`/juramzaavar/item-${index + 1}`}
+      element={<ZeelUA data={allGarchigData} index={index} />}
+    />
+  ));
   return (
     <>
       <Router>
@@ -20,7 +37,7 @@ function App() {
           <Route path="/intranet" element={<Intranet />} />
           <Route path="/juramzaavar/*" element={<JuramZaavar />} />
           <Route path="/videozaavar" element={<VideoZaavar />} />
-          <Route path="/juramzaavar/item-1" element={<ZeelUA />} />
+          {itemRoutes}
         </Routes>
       </Router>
     </>
