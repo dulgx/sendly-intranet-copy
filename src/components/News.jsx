@@ -1,96 +1,41 @@
+import * as React from "react";
 import memoji from "../assets/Memoji-11.png";
 import newsPhoto from "../assets/news.jpg";
+import newsData from "../json-files/news-data.json";
+import Button from "@mui/material/Button";
+import { styled } from "@mui/material/styles";
+import Dialog from "@mui/material/Dialog";
+import DialogTitle from "@mui/material/DialogTitle";
+import DialogContent from "@mui/material/DialogContent";
+import DialogActions from "@mui/material/DialogActions";
+import IconButton from "@mui/material/IconButton";
+import CloseIcon from "@mui/icons-material/Close";
+import Typography from "@mui/material/Typography";
 
-const posts = [
-  {
-    id: 1,
-    title: "Сэндли ББСБ ХК Ногдол ашиг тараахаар боллоо",
-    href: "#",
-    description:
-      "Сэндли ББСБ ХК Ногдол ашиг тараахаар боллоо. Сэндли ББСБ ХК нь 2023 оны цэвэр ашгаас 20.6755 хувийг буюу 1,251,991,232.27 төгрөгийн ногдол ашгийг хувьцаа эзэмшигчиддээ 2024 оны 5 дугаар сарын 21-ний өдөр мөнгөн хэлбэрээр хуваарилахаар шийдвэрлэсэнээ өнөөдөр зарлалаа. Ингэснээр нэгж хувьцаанд ногдох ногдол ашгийн хэмжээ 5.60 төгрөг байх юм. “Сэндли ББСБ” ХК нь 2022 оны есдүгээр сард компанийнхаа 29.97 хувийг олон нийтэд санал болгосноор нээлттэй хувьцаат компани болсон бөгөөд 2022 оны цэвэр ашгаас нэгж хувьцаанд ногдох хэмжээг 2.75 төгрөгөөр тогтоож, нийт 614.8 сая төгрөгийг хувьцаа эзэмшигчиддээ олгож байсан бол энэ жил хувьцаа эзэмшигчиддээ олгож буй ногдол ашгийн хэмжээ өссөн байна.",
-    date: "2024-02-19",
-    author: {
-      name: "Michael Foster",
-      role: "Co-Founder / CTO",
-      href: "#",
-    },
+const news = newsData;
+const BootstrapDialog = styled(Dialog)(({ theme }) => ({
+  "& .MuiDialogContent-root": {
+    padding: theme.spacing(2),
   },
-  {
-    id: 2,
-    title: "Сэндли ББСБ ХК Ногдол ашиг тараахаар боллоо",
-    href: "#",
-    description:
-      "Сэндли ББСБ ХК Ногдол ашиг тараахаар боллоо. Сэндли ББСБ ХК нь 2023 оны цэвэр ашгаас 20.6755 хувийг буюу 1,251,991,232.27 төгрөгийн ногдол ашгийг хувьцаа эзэмшигчиддээ 2024 оны 5 дугаар сарын 21-ний өдөр мөнгөн хэлбэрээр хуваарилахаар шийдвэрлэсэнээ өнөөдөр зарлалаа. Ингэснээр нэгж хувьцаанд ногдох ногдол ашгийн хэмжээ 5.60 төгрөг байх юм. “Сэндли ББСБ” ХК нь 2022 оны есдүгээр сард компанийнхаа 29.97 хувийг олон нийтэд санал болгосноор нээлттэй хувьцаат компани болсон бөгөөд 2022 оны цэвэр ашгаас нэгж хувьцаанд ногдох хэмжээг 2.75 төгрөгөөр тогтоож, нийт 614.8 сая төгрөгийг хувьцаа эзэмшигчиддээ олгож байсан бол энэ жил хувьцаа эзэмшигчиддээ олгож буй ногдол ашгийн хэмжээ өссөн байна.",
-    date: "2024-02-19",
-
-    author: {
-      name: "Michael Foster",
-      role: "Co-Founder / CTO",
-      href: "#",
-    },
+  "& .MuiDialogActions-root": {
+    padding: theme.spacing(1),
   },
-  {
-    id: 3,
-    title: "Сэндли ББСБ ХК Ногдол ашиг тараахаар боллоо",
-    href: "#",
-    description:
-      "Сэндли ББСБ ХК Ногдол ашиг тараахаар боллоо. Сэндли ББСБ ХК нь 2023 оны цэвэр ашгаас 20.6755 хувийг буюу 1,251,991,232.27 төгрөгийн ногдол ашгийг хувьцаа эзэмшигчиддээ 2024 оны 5 дугаар сарын 21-ний өдөр мөнгөн хэлбэрээр хуваарилахаар шийдвэрлэсэнээ өнөөдөр зарлалаа. Ингэснээр нэгж хувьцаанд ногдох ногдол ашгийн хэмжээ 5.60 төгрөг байх юм. “Сэндли ББСБ” ХК нь 2022 оны есдүгээр сард компанийнхаа 29.97 хувийг олон нийтэд санал болгосноор нээлттэй хувьцаат компани болсон бөгөөд 2022 оны цэвэр ашгаас нэгж хувьцаанд ногдох хэмжээг 2.75 төгрөгөөр тогтоож, нийт 614.8 сая төгрөгийг хувьцаа эзэмшигчиддээ олгож байсан бол энэ жил хувьцаа эзэмшигчиддээ олгож буй ногдол ашгийн хэмжээ өссөн байна.",
-    date: "2024-02-19",
-
-    author: {
-      name: "Michael Foster",
-      role: "Co-Founder / CTO",
-      href: "#",
-    },
-  },
-  {
-    id: 1,
-    title: "Сэндли ББСБ ХК Ногдол ашиг тараахаар боллоо",
-    href: "#",
-    description:
-      "Сэндли ББСБ ХК Ногдол ашиг тараахаар боллоо. Сэндли ББСБ ХК нь 2023 оны цэвэр ашгаас 20.6755 хувийг буюу 1,251,991,232.27 төгрөгийн ногдол ашгийг хувьцаа эзэмшигчиддээ 2024 оны 5 дугаар сарын 21-ний өдөр мөнгөн хэлбэрээр хуваарилахаар шийдвэрлэсэнээ өнөөдөр зарлалаа. Ингэснээр нэгж хувьцаанд ногдох ногдол ашгийн хэмжээ 5.60 төгрөг байх юм. “Сэндли ББСБ” ХК нь 2022 оны есдүгээр сард компанийнхаа 29.97 хувийг олон нийтэд санал болгосноор нээлттэй хувьцаат компани болсон бөгөөд 2022 оны цэвэр ашгаас нэгж хувьцаанд ногдох хэмжээг 2.75 төгрөгөөр тогтоож, нийт 614.8 сая төгрөгийг хувьцаа эзэмшигчиддээ олгож байсан бол энэ жил хувьцаа эзэмшигчиддээ олгож буй ногдол ашгийн хэмжээ өссөн байна.",
-    date: "2024-02-19",
-
-    author: {
-      name: "Michael Foster",
-      role: "Co-Founder / CTO",
-      href: "#",
-    },
-  },
-  {
-    id: 2,
-    title: "Сэндли ББСБ ХК Ногдол ашиг тараахаар боллоо",
-    href: "#",
-    description:
-      "Сэндли ББСБ ХК Ногдол ашиг тараахаар боллоо. Сэндли ББСБ ХК нь 2023 оны цэвэр ашгаас 20.6755 хувийг буюу 1,251,991,232.27 төгрөгийн ногдол ашгийг хувьцаа эзэмшигчиддээ 2024 оны 5 дугаар сарын 21-ний өдөр мөнгөн хэлбэрээр хуваарилахаар шийдвэрлэсэнээ өнөөдөр зарлалаа. Ингэснээр нэгж хувьцаанд ногдох ногдол ашгийн хэмжээ 5.60 төгрөг байх юм. “Сэндли ББСБ” ХК нь 2022 оны есдүгээр сард компанийнхаа 29.97 хувийг олон нийтэд санал болгосноор нээлттэй хувьцаат компани болсон бөгөөд 2022 оны цэвэр ашгаас нэгж хувьцаанд ногдох хэмжээг 2.75 төгрөгөөр тогтоож, нийт 614.8 сая төгрөгийг хувьцаа эзэмшигчиддээ олгож байсан бол энэ жил хувьцаа эзэмшигчиддээ олгож буй ногдол ашгийн хэмжээ өссөн байна.",
-    date: "2024-02-19",
-    author: {
-      name: "Michael Foster",
-      role: "Co-Founder / CTO",
-      href: "#",
-    },
-  },
-  {
-    id: 3,
-    title: "Сэндли ББСБ ХК Ногдол ашиг тараахаар боллоо",
-    href: "#",
-    description:
-      "Сэндли ББСБ ХК Ногдол ашиг тараахаар боллоо. Сэндли ББСБ ХК нь 2023 оны цэвэр ашгаас 20.6755 хувийг буюу 1,251,991,232.27 төгрөгийн ногдол ашгийг хувьцаа эзэмшигчиддээ 2024 оны 5 дугаар сарын 21-ний өдөр мөнгөн хэлбэрээр хуваарилахаар шийдвэрлэсэнээ өнөөдөр зарлалаа. Ингэснээр нэгж хувьцаанд ногдох ногдол ашгийн хэмжээ 5.60 төгрөг байх юм. “Сэндли ББСБ” ХК нь 2022 оны есдүгээр сард компанийнхаа 29.97 хувийг олон нийтэд санал болгосноор нээлттэй хувьцаат компани болсон бөгөөд 2022 оны цэвэр ашгаас нэгж хувьцаанд ногдох хэмжээг 2.75 төгрөгөөр тогтоож, нийт 614.8 сая төгрөгийг хувьцаа эзэмшигчиддээ олгож байсан бол энэ жил хувьцаа эзэмшигчиддээ олгож буй ногдол ашгийн хэмжээ өссөн байна.",
-    date: "2024-02-19",
-    author: {
-      name: "Michael Foster",
-      role: "Co-Founder / CTO",
-      href: "#",
-    },
-  },
-];
+}));
 
 export default function News() {
+  const [open, setOpen] = React.useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+  const handleClose = () => {
+    setOpen(false);
+  };
   return (
     <div className="bg-white sm:pb-2">
       <div>
         <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 pt-10 sm:mt-5 sm:pt-5 lg:mx-0 lg:max-w-none lg:grid-cols-3">
-          {posts.map((post) => (
+          {news.map((post, index) => (
             <article
               key={post.id}
               className="bg-blue-50 flex max-w-xl flex-col items-start justify-between p-5 rounded-xl shadow-md"
@@ -104,8 +49,12 @@ export default function News() {
               </div>
 
               <div className="group relative">
-                <h3 className="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-blue-600">
-                  <a href={post.href}>
+                <h3 className="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-blue-600 cursor-pointer">
+                  <a
+                    href={post.href}
+                    onClick={handleClickOpen}
+                    className="cursor-pointer"
+                  >
                     <span className="absolute inset-0" />
                     {post.title}
                   </a>
@@ -139,6 +88,47 @@ export default function News() {
                   </time>
                 </div>
               </div>
+
+              <React.Fragment>
+                <BootstrapDialog
+                  onClose={handleClose}
+                  aria-labelledby="customized-dialog-title"
+                  open={open}
+                >
+                  <DialogTitle sx={{ m: 2, p: 2 }} id="customized-dialog-title">
+                    {post.title}
+                  </DialogTitle>
+                  <IconButton
+                    aria-label="close"
+                    onClick={handleClose}
+                    sx={{
+                      position: "absolute",
+                      right: 8,
+                      top: 8,
+                      color: (theme) => theme.palette.grey[500],
+                    }}
+                  >
+                    <CloseIcon />
+                  </IconButton>
+                  <DialogContent dividers>
+                    <div className="flex justify-center w-full">
+                      <img
+                        src={newsPhoto}
+                        alt="news-photo"
+                        className=" m-2 rounded-lg"
+                      />
+                    </div>
+                    <Typography gutterBottom className="p-4">
+                      {post.description}
+                    </Typography>
+                  </DialogContent>
+                  <DialogActions>
+                    <Button autoFocus onClick={handleClose}>
+                      ХААХ
+                    </Button>
+                  </DialogActions>
+                </BootstrapDialog>
+              </React.Fragment>
             </article>
           ))}
         </div>
