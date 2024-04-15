@@ -1,54 +1,52 @@
- {
-    "employees": [
-        {
-            "name": "Балжинням ОДГЭРЭЛ",
-            "position": "Гүйцэтгэх захирал",
-            "branch_id": 1011000,
-            "mobile_phone": 99095621,
-            "email": "odgerel@sendly.mn",
-            "phone": ""
-        },
-        {
-            "name": "Энхжаргал МӨНХДЭЛГЭР",
-            "position": "Бүтээгдэхүүн хөгжил хариуцсан захирал",
-            "branch_id": "1011000",
-            "mobile_phone": 99021592,
-            "email": "munkhdelger@sendly.mn",
-            "phone": ""
-        },
-        {
-            "name": "Энхжаргал МӨНХДЭЛГЭР",
-            "position": "Бүтээгдэхүүн хөгжил хариуцсан захирал",
-            "branch_id": "1011000",
-            "mobile_phone": 99021592,
-            "email": "munkhdelger@sendly.mn",
-            "phone": ""
-        },
-        {
-            "name": "Энхжаргал МӨНХДЭЛГЭР",
-            "position": "Бүтээгдэхүүн хөгжил хариуцсан захирал",
-            "branch_id": "1011000",
-            "mobile_phone": 99021592,
-            "email": "munkhdelger@sendly.mn",
-            "phone": ""
-        },
-        {
-            "name": "Энхжаргал МӨНХДЭЛГЭР",
-            "position": "Бүтээгдэхүүн хөгжил хариуцсан захирал",
-            "branch_id": "1011000",
-            "mobile_phone": 99021592,
-            "email": "munkhdelger@sendly.mn",
-            "phone": ""
-        },
-        {
-            "name": "Энхжаргал МӨНХДЭЛГЭР",
-            "position": "Бүтээгдэхүүн хөгжил хариуцсан захирал",
-            "branch_id": "1011000",
-            "mobile_phone": 99021592,
-            "email": "munkhdelger@sendly.mn",
-            "phone": ""
-        }
-
-    ]    
+{
+  "employees": [
+    {
+      "name": "Балжинням Одгэрэл",
+      "position": "Гүйцэтгэх захирал",
+      "branch_id": 1011000,
+      "mobile_phone": 99095621,
+      "email": "odgerel@sendly.mn",
+      "phone": ""
+    },
+    {
+      "name": "Энхжаргал МӨНХДЭЛГЭР",
+      "position": "Бүтээгдэхүүн хөгжил хариуцсан захирал",
+      "branch_id": "1011000",
+      "mobile_phone": 99021592,
+      "email": "munkhdelger@sendly.mn",
+      "phone": ""
+    },
+    {
+      "name": "Энхжаргал МӨНХДЭЛГЭР",
+      "position": "Бүтээгдэхүүн хөгжил хариуцсан захирал",
+      "branch_id": "1011000",
+      "mobile_phone": 99021592,
+      "email": "munkhdelger@sendly.mn",
+      "phone": ""
+    },
+    {
+      "name": "Энхжаргал МӨНХДЭЛГЭР",
+      "position": "Бүтээгдэхүүн хөгжил хариуцсан захирал",
+      "branch_id": "1011000",
+      "mobile_phone": 99021592,
+      "email": "munkhdelger@sendly.mn",
+      "phone": ""
+    },
+    {
+      "name": "Энхжаргал МӨНХДЭЛГЭР",
+      "position": "Бүтээгдэхүүн хөгжил хариуцсан захирал",
+      "branch_id": "1011000",
+      "mobile_phone": 99021592,
+      "email": "munkhdelger@sendly.mn",
+      "phone": ""
+    },
+    {
+      "name": "Энхжаргал МӨНХДЭЛГЭР",
+      "position": "Бүтээгдэхүүн хөгжил хариуцсан захирал",
+      "branch_id": "1011000",
+      "mobile_phone": 99021592,
+      "email": "munkhdelger@sendly.mn",
+      "phone": ""
+    }
+  ]
 }
-
