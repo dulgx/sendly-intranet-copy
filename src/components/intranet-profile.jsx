@@ -7,35 +7,39 @@ const employeeProfile = employee.employees;
 
 function IntranetProfile() {
   return (
-    <section class="bg-white dark:bg-gray-900">
-      <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-6">
-        <div class="grid gap-8 lg:gap-16 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-          <div class="text-center text-gray-500 dark:text-gray-400">
+    <section className="bg-white dark:bg-gray-900">
+      <div className="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-6">
+        <div className="grid gap-8 lg:gap-16 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+          <div className="text-center text-gray-500 dark:text-gray-400">
             <img
-              class="mx-auto mb-4 w-36 h-36 rounded-full"
+              className="mx-auto mb-4 w-36 h-36 rounded-full"
               src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/bonnie-green.png"
               alt="Bonnie Avatar"
             />
-            <h3 class="mb-1 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+            <h3 className="mb-1 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
               <a href="#">{employee.employees[0].name} </a>
             </h3>
             <p>{employee.employees[0].position}</p>
             <p>
-              <span className="text-slate-900 font-semibold">Гар утас :</span>{" "}
+              <span classNameName="text-slate-900 font-semibold">
+                Гар утас :
+              </span>{" "}
               {employee.employees[0].mobile_phone}
             </p>
-            <p className="cursor-pointer hover:text-blue-600">
-              <span className="text-slate-900 font-semibold ">И-мэйл :</span>{" "}
+            <p classNameName="cursor-pointer hover:text-blue-600">
+              <span classNameName="text-slate-900 font-semibold ">
+                И-мэйл :
+              </span>{" "}
               <a href="mailto:{{email}}">{email}</a>
             </p>
-            <ul class="flex justify-center mt-4 space-x-4">
+            <ul className="flex justify-center mt-4 space-x-4">
               <li>
                 <a
                   href="#"
-                  class="text-[#39569c] hover:text-gray-900 dark:hover:text-white"
+                  className="text-[#39569c] hover:text-gray-900 dark:hover:text-white"
                 >
                   <svg
-                    class="w-6 h-6"
+                    className="w-6 h-6"
                     fill="currentColor"
                     viewBox="0 0 24 24"
                     aria-hidden="true"
@@ -51,10 +55,10 @@ function IntranetProfile() {
               <li>
                 <a
                   href="#"
-                  class="text-[#00acee] hover:text-gray-900 dark:hover:text-white"
+                  className="text-[#00acee] hover:text-gray-900 dark:hover:text-white"
                 >
                   <svg
-                    class="w-6 h-6"
+                    className="w-6 h-6"
                     fill="currentColor"
                     viewBox="0 0 24 24"
                     aria-hidden="true"
@@ -66,10 +70,10 @@ function IntranetProfile() {
               <li>
                 <a
                   href="#"
-                  class="text-gray-900 hover:text-gray-900 dark:hover:text-white dark:text-gray-300"
+                  className="text-gray-900 hover:text-gray-900 dark:hover:text-white dark:text-gray-300"
                 >
                   <svg
-                    class="w-6 h-6"
+                    className="w-6 h-6"
                     fill="currentColor"
                     viewBox="0 0 24 24"
                     aria-hidden="true"
@@ -85,10 +89,10 @@ function IntranetProfile() {
               <li>
                 <a
                   href="#"
-                  class="text-[#ea4c89] hover:text-gray-900 dark:hover:text-white"
+                  className="text-[#ea4c89] hover:text-gray-900 dark:hover:text-white"
                 >
                   <svg
-                    class="w-6 h-6"
+                    className="w-6 h-6"
                     fill="currentColor"
                     viewBox="0 0 24 24"
                     aria-hidden="true"
@@ -104,24 +108,24 @@ function IntranetProfile() {
             </ul>
           </div>
 
-          <div class="text-center text-gray-500 dark:text-gray-400">
+          <div className="text-center text-gray-500 dark:text-gray-400">
             <img
-              class="mx-auto mb-4 w-36 h-36 rounded-full"
+              className="mx-auto mb-4 w-36 h-36 rounded-full"
               src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/helene-engels.png"
               alt="Helene Avatar"
             />
-            <h3 class="mb-1 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+            <h3 className="mb-1 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
               <a href="#">Helene Engels</a>
             </h3>
             <p>CTO/Co-founder</p>
-            <ul class="flex justify-center mt-4 space-x-4">
+            <ul className="flex justify-center mt-4 space-x-4">
               <li>
                 <a
                   href="#"
-                  class="text-[#39569c] hover:text-gray-900 dark:hover:text-white"
+                  className="text-[#39569c] hover:text-gray-900 dark:hover:text-white"
                 >
                   <svg
-                    class="w-6 h-6"
+                    className="w-6 h-6"
                     fill="currentColor"
                     viewBox="0 0 24 24"
                     aria-hidden="true"
@@ -137,10 +141,10 @@ function IntranetProfile() {
               <li>
                 <a
                   href="#"
-                  class="text-[#00acee] hover:text-gray-900 dark:hover:text-white"
+                  className="text-[#00acee] hover:text-gray-900 dark:hover:text-white"
                 >
                   <svg
-                    class="w-6 h-6"
+                    className="w-6 h-6"
                     fill="currentColor"
                     viewBox="0 0 24 24"
                     aria-hidden="true"
@@ -152,10 +156,10 @@ function IntranetProfile() {
               <li>
                 <a
                   href="#"
-                  class="text-gray-900 hover:text-gray-900 dark:hover:text-white dark:text-gray-300"
+                  className="text-gray-900 hover:text-gray-900 dark:hover:text-white dark:text-gray-300"
                 >
                   <svg
-                    class="w-6 h-6"
+                    className="w-6 h-6"
                     fill="currentColor"
                     viewBox="0 0 24 24"
                     aria-hidden="true"
@@ -171,10 +175,10 @@ function IntranetProfile() {
               <li>
                 <a
                   href="#"
-                  class="text-[#ea4c89] hover:text-gray-900 dark:hover:text-white"
+                  className="text-[#ea4c89] hover:text-gray-900 dark:hover:text-white"
                 >
                   <svg
-                    class="w-6 h-6"
+                    className="w-6 h-6"
                     fill="currentColor"
                     viewBox="0 0 24 24"
                     aria-hidden="true"
@@ -189,24 +193,24 @@ function IntranetProfile() {
               </li>
             </ul>
           </div>
-          <div class="text-center text-gray-500 dark:text-gray-400">
+          <div className="text-center text-gray-500 dark:text-gray-400">
             <img
-              class="mx-auto mb-4 w-36 h-36 rounded-full"
+              className="mx-auto mb-4 w-36 h-36 rounded-full"
               src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/jese-leos.png"
               alt="Jese Avatar"
             />
-            <h3 class="mb-1 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+            <h3 className="mb-1 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
               <a href="#">Jese Leos</a>
             </h3>
             <p>SEO & Marketing</p>
-            <ul class="flex justify-center mt-4 space-x-4">
+            <ul className="flex justify-center mt-4 space-x-4">
               <li>
                 <a
                   href="#"
-                  class="text-[#39569c] hover:text-gray-900 dark:hover:text-white"
+                  className="text-[#39569c] hover:text-gray-900 dark:hover:text-white"
                 >
                   <svg
-                    class="w-6 h-6"
+                    className="w-6 h-6"
                     fill="currentColor"
                     viewBox="0 0 24 24"
                     aria-hidden="true"
@@ -222,10 +226,10 @@ function IntranetProfile() {
               <li>
                 <a
                   href="#"
-                  class="text-[#00acee] hover:text-gray-900 dark:hover:text-white"
+                  className="text-[#00acee] hover:text-gray-900 dark:hover:text-white"
                 >
                   <svg
-                    class="w-6 h-6"
+                    className="w-6 h-6"
                     fill="currentColor"
                     viewBox="0 0 24 24"
                     aria-hidden="true"
@@ -237,10 +241,10 @@ function IntranetProfile() {
               <li>
                 <a
                   href="#"
-                  class="text-gray-900 hover:text-gray-900 dark:hover:text-white dark:text-gray-300"
+                  className="text-gray-900 hover:text-gray-900 dark:hover:text-white dark:text-gray-300"
                 >
                   <svg
-                    class="w-6 h-6"
+                    className="w-6 h-6"
                     fill="currentColor"
                     viewBox="0 0 24 24"
                     aria-hidden="true"
@@ -256,10 +260,10 @@ function IntranetProfile() {
               <li>
                 <a
                   href="#"
-                  class="text-[#ea4c89] hover:text-gray-900 dark:hover:text-white"
+                  className="text-[#ea4c89] hover:text-gray-900 dark:hover:text-white"
                 >
                   <svg
-                    class="w-6 h-6"
+                    className="w-6 h-6"
                     fill="currentColor"
                     viewBox="0 0 24 24"
                     aria-hidden="true"
@@ -274,24 +278,24 @@ function IntranetProfile() {
               </li>
             </ul>
           </div>
-          <div class="text-center text-gray-500 dark:text-gray-400">
+          <div className="text-center text-gray-500 dark:text-gray-400">
             <img
-              class="mx-auto mb-4 w-36 h-36 rounded-full"
+              className="mx-auto mb-4 w-36 h-36 rounded-full"
               src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/joseph-mcfall.png"
               alt="Joseph Avatar"
             />
-            <h3 class="mb-1 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+            <h3 className="mb-1 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
               <a href="#">Joseph Mcfall</a>
             </h3>
             <p>Sales</p>
-            <ul class="flex justify-center mt-4 space-x-4">
+            <ul className="flex justify-center mt-4 space-x-4">
               <li>
                 <a
                   href="#"
-                  class="text-[#39569c] hover:text-gray-900 dark:hover:text-white"
+                  className="text-[#39569c] hover:text-gray-900 dark:hover:text-white"
                 >
                   <svg
-                    class="w-6 h-6"
+                    className="w-6 h-6"
                     fill="currentColor"
                     viewBox="0 0 24 24"
                     aria-hidden="true"
@@ -307,10 +311,10 @@ function IntranetProfile() {
               <li>
                 <a
                   href="#"
-                  class="text-[#00acee] hover:text-gray-900 dark:hover:text-white"
+                  className="text-[#00acee] hover:text-gray-900 dark:hover:text-white"
                 >
                   <svg
-                    class="w-6 h-6"
+                    className="w-6 h-6"
                     fill="currentColor"
                     viewBox="0 0 24 24"
                     aria-hidden="true"
@@ -322,10 +326,10 @@ function IntranetProfile() {
               <li>
                 <a
                   href="#"
-                  class="text-gray-900 hover:text-gray-900 dark:hover:text-white dark:text-gray-300"
+                  className="text-gray-900 hover:text-gray-900 dark:hover:text-white dark:text-gray-300"
                 >
                   <svg
-                    class="w-6 h-6"
+                    className="w-6 h-6"
                     fill="currentColor"
                     viewBox="0 0 24 24"
                     aria-hidden="true"
@@ -341,10 +345,10 @@ function IntranetProfile() {
               <li>
                 <a
                   href="#"
-                  class="text-[#ea4c89] hover:text-gray-900 dark:hover:text-white"
+                  className="text-[#ea4c89] hover:text-gray-900 dark:hover:text-white"
                 >
                   <svg
-                    class="w-6 h-6"
+                    className="w-6 h-6"
                     fill="currentColor"
                     viewBox="0 0 24 24"
                     aria-hidden="true"
@@ -359,24 +363,24 @@ function IntranetProfile() {
               </li>
             </ul>
           </div>
-          <div class="text-center text-gray-500 dark:text-gray-400">
+          <div className="text-center text-gray-500 dark:text-gray-400">
             <img
-              class="mx-auto mb-4 w-36 h-36 rounded-full"
+              className="mx-auto mb-4 w-36 h-36 rounded-full"
               src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/sofia-mcguire.png"
               alt="Sofia Avatar"
             />
-            <h3 class="mb-1 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+            <h3 className="mb-1 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
               <a href="#">Lana Byrd</a>
             </h3>
             <p>Web Designer</p>
-            <ul class="flex justify-center mt-4 space-x-4">
+            <ul className="flex justify-center mt-4 space-x-4">
               <li>
                 <a
                   href="#"
-                  class="text-[#39569c] hover:text-gray-900 dark:hover:text-white"
+                  className="text-[#39569c] hover:text-gray-900 dark:hover:text-white"
                 >
                   <svg
-                    class="w-6 h-6"
+                    className="w-6 h-6"
                     fill="currentColor"
                     viewBox="0 0 24 24"
                     aria-hidden="true"
@@ -392,10 +396,10 @@ function IntranetProfile() {
               <li>
                 <a
                   href="#"
-                  class="text-[#00acee] hover:text-gray-900 dark:hover:text-white"
+                  className="text-[#00acee] hover:text-gray-900 dark:hover:text-white"
                 >
                   <svg
-                    class="w-6 h-6"
+                    className="w-6 h-6"
                     fill="currentColor"
                     viewBox="0 0 24 24"
                     aria-hidden="true"
@@ -407,10 +411,10 @@ function IntranetProfile() {
               <li>
                 <a
                   href="#"
-                  class="text-gray-900 hover:text-gray-900 dark:hover:text-white dark:text-gray-300"
+                  className="text-gray-900 hover:text-gray-900 dark:hover:text-white dark:text-gray-300"
                 >
                   <svg
-                    class="w-6 h-6"
+                    className="w-6 h-6"
                     fill="currentColor"
                     viewBox="0 0 24 24"
                     aria-hidden="true"
@@ -426,29 +430,29 @@ function IntranetProfile() {
               <li>
                 <a
                   href="#"
-                  class="text-[#ea4c89] hover:text-gray-900 dark:hover:text-white"
+                  className="text-[#ea4c89] hover:text-gray-900 dark:hover:text-white"
                 ></a>
               </li>
             </ul>
           </div>
-          <div class="text-center text-gray-500 dark:text-gray-400">
+          <div className="text-center text-gray-500 dark:text-gray-400">
             <img
-              class="mx-auto mb-4 w-36 h-36 rounded-full"
+              className="mx-auto mb-4 w-36 h-36 rounded-full"
               src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/thomas-lean.png"
               alt="Leslie Avatar"
             />
-            <h3 class="mb-1 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+            <h3 className="mb-1 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
               <a href="#">Leslie Livingston</a>
             </h3>
             <p>Graphic Designer</p>
-            <ul class="flex justify-center mt-4 space-x-4">
+            <ul className="flex justify-center mt-4 space-x-4">
               <li>
                 <a
                   href="#"
-                  class="text-[#39569c] hover:text-gray-900 dark:hover:text-white"
+                  className="text-[#39569c] hover:text-gray-900 dark:hover:text-white"
                 >
                   <svg
-                    class="w-6 h-6"
+                    className="w-6 h-6"
                     fill="currentColor"
                     viewBox="0 0 24 24"
                     aria-hidden="true"
@@ -464,10 +468,10 @@ function IntranetProfile() {
               <li>
                 <a
                   href="#"
-                  class="text-[#00acee] hover:text-gray-900 dark:hover:text-white"
+                  className="text-[#00acee] hover:text-gray-900 dark:hover:text-white"
                 >
                   <svg
-                    class="w-6 h-6"
+                    className="w-6 h-6"
                     fill="currentColor"
                     viewBox="0 0 24 24"
                     aria-hidden="true"
@@ -479,10 +483,10 @@ function IntranetProfile() {
               <li>
                 <a
                   href="#"
-                  class="text-gray-900 hover:text-gray-900 dark:hover:text-white dark:text-gray-300"
+                  className="text-gray-900 hover:text-gray-900 dark:hover:text-white dark:text-gray-300"
                 >
                   <svg
-                    class="w-6 h-6"
+                    className="w-6 h-6"
                     fill="currentColor"
                     viewBox="0 0 24 24"
                     aria-hidden="true"
@@ -498,10 +502,10 @@ function IntranetProfile() {
               <li>
                 <a
                   href="#"
-                  class="text-[#ea4c89] hover:text-gray-900 dark:hover:text-white"
+                  className="text-[#ea4c89] hover:text-gray-900 dark:hover:text-white"
                 >
                   <svg
-                    class="w-6 h-6"
+                    className="w-6 h-6"
                     fill="currentColor"
                     viewBox="0 0 24 24"
                     aria-hidden="true"
@@ -516,24 +520,24 @@ function IntranetProfile() {
               </li>
             </ul>
           </div>
-          <div class="text-center text-gray-500 dark:text-gray-400">
+          <div className="text-center text-gray-500 dark:text-gray-400">
             <img
-              class="mx-auto mb-4 w-36 h-36 rounded-full"
+              className="mx-auto mb-4 w-36 h-36 rounded-full"
               src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/michael-gouch.png"
               alt="Michael Avatar"
             />
-            <h3 class="mb-1 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+            <h3 className="mb-1 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
               <a href="#">Michael Gough</a>
             </h3>
             <p>React Developer</p>
-            <ul class="flex justify-center mt-4 space-x-4">
+            <ul className="flex justify-center mt-4 space-x-4">
               <li>
                 <a
                   href="#"
-                  class="text-[#39569c] hover:text-gray-900 dark:hover:text-white"
+                  className="text-[#39569c] hover:text-gray-900 dark:hover:text-white"
                 >
                   <svg
-                    class="w-6 h-6"
+                    className="w-6 h-6"
                     fill="currentColor"
                     viewBox="0 0 24 24"
                     aria-hidden="true"
@@ -549,10 +553,10 @@ function IntranetProfile() {
               <li>
                 <a
                   href="#"
-                  class="text-[#00acee] hover:text-gray-900 dark:hover:text-white"
+                  className="text-[#00acee] hover:text-gray-900 dark:hover:text-white"
                 >
                   <svg
-                    class="w-6 h-6"
+                    className="w-6 h-6"
                     fill="currentColor"
                     viewBox="0 0 24 24"
                     aria-hidden="true"
@@ -564,10 +568,10 @@ function IntranetProfile() {
               <li>
                 <a
                   href="#"
-                  class="text-gray-900 hover:text-gray-900 dark:hover:text-white dark:text-gray-300"
+                  className="text-gray-900 hover:text-gray-900 dark:hover:text-white dark:text-gray-300"
                 >
                   <svg
-                    class="w-6 h-6"
+                    className="w-6 h-6"
                     fill="currentColor"
                     viewBox="0 0 24 24"
                     aria-hidden="true"
@@ -583,10 +587,10 @@ function IntranetProfile() {
               <li>
                 <a
                   href="#"
-                  class="text-[#ea4c89] hover:text-gray-900 dark:hover:text-white"
+                  className="text-[#ea4c89] hover:text-gray-900 dark:hover:text-white"
                 >
                   <svg
-                    class="w-6 h-6"
+                    className="w-6 h-6"
                     fill="currentColor"
                     viewBox="0 0 24 24"
                     aria-hidden="true"
@@ -601,24 +605,24 @@ function IntranetProfile() {
               </li>
             </ul>
           </div>
-          <div class="text-center text-gray-500 dark:text-gray-400">
+          <div className="text-center text-gray-500 dark:text-gray-400">
             <img
-              class="mx-auto mb-4 w-36 h-36 rounded-full"
+              className="mx-auto mb-4 w-36 h-36 rounded-full"
               src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/neil-sims.png"
               alt="Neil Avatar"
             />
-            <h3 class="mb-1 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+            <h3 className="mb-1 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
               <a href="#">Neil Sims</a>
             </h3>
             <p>Vue.js Developer</p>
-            <ul class="flex justify-center mt-4 space-x-4">
+            <ul className="flex justify-center mt-4 space-x-4">
               <li>
                 <a
                   href="#"
-                  class="text-[#39569c] hover:text-gray-900 dark:hover:text-white"
+                  className="text-[#39569c] hover:text-gray-900 dark:hover:text-white"
                 >
                   <svg
-                    class="w-6 h-6"
+                    className="w-6 h-6"
                     fill="currentColor"
                     viewBox="0 0 24 24"
                     aria-hidden="true"
@@ -634,10 +638,10 @@ function IntranetProfile() {
               <li>
                 <a
                   href="#"
-                  class="text-[#00acee] hover:text-gray-900 dark:hover:text-white"
+                  className="text-[#00acee] hover:text-gray-900 dark:hover:text-white"
                 >
                   <svg
-                    class="w-6 h-6"
+                    className="w-6 h-6"
                     fill="currentColor"
                     viewBox="0 0 24 24"
                     aria-hidden="true"
@@ -649,10 +653,10 @@ function IntranetProfile() {
               <li>
                 <a
                   href="#"
-                  class="text-gray-900 hover:text-gray-900 dark:hover:text-white dark:text-gray-300"
+                  className="text-gray-900 hover:text-gray-900 dark:hover:text-white dark:text-gray-300"
                 >
                   <svg
-                    class="w-6 h-6"
+                    className="w-6 h-6"
                     fill="currentColor"
                     viewBox="0 0 24 24"
                     aria-hidden="true"
@@ -668,10 +672,10 @@ function IntranetProfile() {
               <li>
                 <a
                   href="#"
-                  class="text-[#ea4c89] hover:text-gray-900 dark:hover:text-white"
+                  className="text-[#ea4c89] hover:text-gray-900 dark:hover:text-white"
                 >
                   <svg
-                    class="w-6 h-6"
+                    className="w-6 h-6"
                     fill="currentColor"
                     viewBox="0 0 24 24"
                     aria-hidden="true"

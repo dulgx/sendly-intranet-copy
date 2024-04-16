@@ -23,7 +23,7 @@ function Intranet() {
               >
                 {companies.map((aimag, index) => (
                   <TreeItem
-                    itemId={index}
+                    itemId="grid-community"
                     label={aimag.branch}
                     key={index}
                   ></TreeItem>
