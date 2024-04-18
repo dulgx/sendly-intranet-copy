@@ -35,7 +35,7 @@ function Intranet() {
         </div>
 
         <div>
-          <div className="mt-5 flex w-full justify-evenly fixed">
+          <div className="mt-5 flex w-full justify-evenly static">
             <form class="max-w-md w-72">
               <label
                 for="default-search"
