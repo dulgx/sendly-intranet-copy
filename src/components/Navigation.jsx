@@ -30,7 +30,7 @@ function Disclosure1() {
 
   return (
     <>
-      <Disclosure as="nav" className="bg-gray-800 sticky top-0 z-10">
+      <Disclosure as="nav" className=" sticky top-0 z-1 bg-sky-900">
         {({ open }) => (
           <>
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -50,7 +50,7 @@ function Disclosure1() {
                         <NavLink
                           key={item.name}
                           to={item.href}
-                          className="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium active:bg-slate-900 focus:bg-slate-900"
+                          className="text-gray-200 hover:bg-[#70cbce9f] hover:text-white rounded-md px-3 py-2 text-sm font-medium active:bg-bg-[#00e6ac] focus:bg-bg-[#00e6ac]"
                         >
                           {item.name}
                         </NavLink>

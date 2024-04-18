@@ -38,7 +38,7 @@ export default function News() {
           {news.map((post, index) => (
             <article
               key={post.id}
-              className="bg-blue-50 flex max-w-xl flex-col items-start justify-between p-5 rounded-xl shadow-md"
+              className="bg-gradient-to-r from-indigo-100 via-blue-50 to-red-50 flex max-w-xl flex-col items-start justify-between p-5 rounded-xl shadow-md"
             >
               <div className="flex justify-center w-full">
                 <img

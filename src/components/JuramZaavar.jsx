@@ -1,4 +1,4 @@
-import folderIcon from "../assets/folder.png";
+import tableIcon from "../assets/table.svg";
 import { Link } from "react-router-dom";
 
 const posts = [
@@ -52,10 +52,10 @@ export default function JuramZaavar() {
           {posts.map((post) => (
             <article
               key={post.id}
-              className="bg-stone-100  flex max-w-xl flex-col items-start justify-between p-5 rounded-xl shadow hover:bg-sky-50 cursor-pointer"
+              className="bg-stone-100  flex max-w-xl flex-col items-start justify-between p-5 rounded-xl shadow hover:bg-sky-50 cursor-pointer transition ease-in-out delay-5 hover:-translate-y-1 hover:scale-110  duration-300"
             >
               <div className="group relative flex flex-row items-center">
-                <img src={folderIcon} alt="folder" className="w-14" />
+                <img src={tableIcon} alt="folder" className="w-14" />
                 <h3 className="mt-3 text-sm font-semibold leading-6 text-gray-900 group-hover:text-gray-600 flex ml-8">
                   <Link to={post.link}>
                     <span className="absolute inset-0" />
