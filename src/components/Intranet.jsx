@@ -5,28 +5,29 @@ import IntranetProfile from "./intranet-profile";
 import Box from "@mui/material/Box";
 import { SimpleTreeView } from "@mui/x-tree-view/SimpleTreeView";
 import { TreeItem } from "@mui/x-tree-view/TreeItem";
+import SalbarList from "./SalbarList";
 
 function Intranet() {
-  const companies = CompanyData.companies[2].aimag;
-  const aimag = CompanyData.companies.map((item) => item.aimag);
+  const companies = CompanyData;
 
   return (
     <>
       <section className="flex w-full overflow-hidden h-100">
-        <div className="m-5">
+        <div className="m-5 overflow-scroll">
           <Box>
             <SimpleTreeView>
               <TreeItem itemId="grid-community1" label="@mui/x-data-grid" />
-              <TreeItem
-                itemId="grid-community"
-                label={CompanyData.companies[2].name}
-              >
-                {companies.map((aimag, index) => (
+              <TreeItem itemId="grid-community" label={companies[2].br_name}>
+                {companies.map((company, index) => (
                   <TreeItem
-                    itemId="grid-community"
-                    label={aimag.branch}
+                    itemId={index}
+                    label={
+                      company.br_id >= 1010100 && company.br_id <= 1010283
+                        ? company.br_name.slice(8)
+                        : "-"
+                    }
                     key={index}
-                  ></TreeItem>
+                  />
                 ))}
               </TreeItem>
             </SimpleTreeView>
@@ -34,7 +35,7 @@ function Intranet() {
         </div>
 
         <div>
-          <div className="mt-5 flex w-full justify-evenly sticky ">
+          <div className="mt-5 flex w-full justify-evenly fixed">
             <form class="max-w-md w-72">
               <label
                 for="default-search"

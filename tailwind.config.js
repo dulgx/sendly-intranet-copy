@@ -8,5 +8,4 @@ export default {
     extend: {},
   },
   plugins: [require("flowbite/plugin")],
-  plugins: [require("tailwindcss-animated")],
 };

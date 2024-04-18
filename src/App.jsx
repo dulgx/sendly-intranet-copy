@@ -21,6 +21,7 @@ function App() {
     <>
       <Router>
         <Disclosure1 />
+        <div className="pt-20"></div>
         <Routes>
           <Route path="" element={<Dashboard />} />
           <Route path="/intranet" element={<Intranet />} />

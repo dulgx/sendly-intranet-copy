@@ -3,14 +3,12 @@ import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
 import CompanyData from "../json-files/salbar.json";
 
-export default function Grouped() {
-  const branches = CompanyData.companies
-    .filter((company) => company.subsidiaries)
-    .flatMap((company) => company.subsidiaries);
+const companies = CompanyData;
 
-  const options = branches
+export default function Grouped() {
+  const options = companies
     .map((option) => {
-      const branchName = option.branch;
+      const branchName = option.br_name.slice(8);
       if (/^\d+$/.test(branchName) || !/[а-яА-Я]/.test(branchName)) {
         return null;
       }

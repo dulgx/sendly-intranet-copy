@@ -30,7 +30,7 @@ function Disclosure1() {
 
   return (
     <>
-      <Disclosure as="nav" className=" sticky top-0 z-1 bg-sky-900">
+      <Disclosure as="nav" className="top-0 z-10 bg-sky-900 fixed w-full">
         {({ open }) => (
           <>
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
