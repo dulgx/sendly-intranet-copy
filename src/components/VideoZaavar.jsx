@@ -1,4 +1,7 @@
 import React, { useState, useEffect } from "react";
+import Box from "@mui/material/Box";
+import { SimpleTreeView } from "@mui/x-tree-view/SimpleTreeView";
+import { TreeItem } from "@mui/x-tree-view/TreeItem";
 
 function VideoZaavar() {
   const [fetchedData, setFetchedData] = useState([]);
@@ -19,16 +22,29 @@ function VideoZaavar() {
     fetchData();
   }, []);
 
+  const mainBranch = fetchedData.filter(
+    (item) => item.br_id >= 1000 && item.br_id <= 2000
+  );
+
+  function handleClick() {
+    const [passID, setPassID] = useState([1010100]);
+    setPassID();
+  }
+
   return (
     <div>
-      <h1>Fetched Data</h1>
-      <ul>
-        {fetchedData.map((item, index) => (
-          <li key={index}>
-            {item.br_id} - {item.br_name} - {item.is_salbar}
-          </li>
-        ))}
-      </ul>
+      <Box>
+        <SimpleTreeView>
+          {mainBranch.map((company, index) => (
+            <TreeItem
+              key={index}
+              itemId={index}
+              label={company.br_name.slice(5)}
+              onClick={handleClick}
+            />
+          ))}
+        </SimpleTreeView>
+      </Box>
     </div>
   );
 }

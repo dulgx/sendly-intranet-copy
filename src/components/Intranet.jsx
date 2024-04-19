@@ -1,35 +1,52 @@
-import React, { useState } from "react";
-import CompanyData from "../json-files/salbar.json";
+import React, { useState, useEffect } from "react";
 import Grouped from "./SalbaraarHaih";
 import IntranetProfile from "./intranet-profile";
 import Box from "@mui/material/Box";
 import { SimpleTreeView } from "@mui/x-tree-view/SimpleTreeView";
 import { TreeItem } from "@mui/x-tree-view/TreeItem";
-import SalbarList from "./SalbarList";
 
 function Intranet() {
-  const companies = CompanyData;
+  const [fetchedData, setFetchedData] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(
+          "https://192.168.90.91/apps/test_hr/intranet/test.php"
+        );
+        const data = await response.json();
+        setFetchedData(data);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  const mainBranch = fetchedData.filter(
+    (item) => item.br_id >= 1000 && item.br_id <= 2000
+  );
+
+  function handleClick(companyID) {
+    const [passID, setPassID] = useState([1010100]);
+    setPassID(companyID);
+  }
 
   return (
     <>
       <section className="flex w-full overflow-hidden h-100">
-        <div className="m-5 overflow-scroll">
+        <div className="mt-5">
           <Box>
             <SimpleTreeView>
-              <TreeItem itemId="grid-community1" label="@mui/x-data-grid" />
-              <TreeItem itemId="grid-community" label={companies[2].br_name}>
-                {companies.map((company, index) => (
-                  <TreeItem
-                    itemId={index}
-                    label={
-                      company.br_id >= 1010100 && company.br_id <= 1010283
-                        ? company.br_name.slice(8)
-                        : "-"
-                    }
-                    key={index}
-                  />
-                ))}
-              </TreeItem>
+              {mainBranch.map((company, index) => (
+                <TreeItem
+                  key={index}
+                  itemId={index}
+                  label={company.br_name.slice(5)}
+                  onClick={() => handleClick(company.br_id)}
+                />
+              ))}
             </SimpleTreeView>
           </Box>
         </div>
