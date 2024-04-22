@@ -36,15 +36,13 @@ function IntranetProfile() {
                 {item.position}
               </p>
               <p>
-                <span classNameName="text-slate-900 font-semibold text-sm">
+                <span className="text-slate-900 font-semibold text-sm">
                   Гар утас :
                 </span>{" "}
                 {item.mobile_phone}
               </p>
-              <p classNameName="cursor-pointer hover:text-blue-600 text-sm">
-                <span classNameName="text-slate-900 font-semibold ">
-                  И-мэйл :
-                </span>{" "}
+              <p className="cursor-pointer hover:text-blue-600 text-sm">
+                <span className="text-slate-900 font-semibold ">И-мэйл :</span>{" "}
                 <a
                   className=" hover:text-cyan-800 hover:font-semibold font-medium text-sm"
                   href={`mailto:${item.email}`}

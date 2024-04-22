@@ -38,7 +38,7 @@ function SalbarList() {
           {mainBranch.map((company, index) => (
             <TreeItem
               key={index}
-              itemId={index}
+              itemId={company.br_id}
               label={company.br_name.slice(5)}
               onClick={() => handleClick(company.br_id)}
             />

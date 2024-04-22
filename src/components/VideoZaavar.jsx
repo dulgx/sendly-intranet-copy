@@ -26,10 +26,11 @@ function VideoZaavar() {
     (item) => item.br_id >= 1000 && item.br_id <= 2000
   );
 
-  function handleClick() {
-    const [passID, setPassID] = useState([1010100]);
-    setPassID();
-  }
+  const aimagGyalsBranch = fetchedData.filter(
+    (item) => item.br_id >= 1010100 && item.br_id <= 1010283
+  );
+
+  function handleClick() {}
 
   return (
     <div>
@@ -37,11 +38,11 @@ function VideoZaavar() {
         <SimpleTreeView>
           {mainBranch.map((company, index) => (
             <TreeItem
-              key={index}
-              itemId={index}
+              key={company.id || index}
+              itemId={company.id || index}
               label={company.br_name.slice(5)}
-              onClick={handleClick}
-            />
+              onClick={() => handleClick(company.id)}
+            ></TreeItem>
           ))}
         </SimpleTreeView>
       </Box>
