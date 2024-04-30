@@ -8,6 +8,9 @@ function Intranet() {
   const [fetchedData, setFetchedData] = useState([]);
   const [employeeData, setEmployeeData] = useState([]);
   const [brId, setBrId] = useState("1011000");
+  const [searchTerm, setSearchTerm] = useState("");
+  const [results, setResults] = useState([]);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -22,25 +25,59 @@ function Intranet() {
       }
     };
 
-    fetchData();
-  }, []);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch(
-          `https://192.168.90.91/apps/test_hr/intranet/employee_data_json.php?br_id=${brId}`
-        );
-        const data = await response.json();
-        setEmployeeData(data);
-      } catch (error) {
-        console.log("Error fetching data: ", error);
+    const fetchEmployeeData = async () => {
+      if (brId !== "") {
+        try {
+          const response = await fetch(
+            `https://192.168.90.91/apps/test_hr/intranet/employee_data_json.php?br_id=${brId}`
+          );
+          const data = await response.json();
+          setEmployeeData(data);
+        } catch (error) {
+          console.log("Error fetching employee data: ", error);
+        }
       }
     };
-    if (brId !== "") {
-      fetchData();
-    }
+
+    fetchData();
+    fetchEmployeeData();
   }, [brId]);
+
+  const handleSearch = async (e) => {
+    e.preventDefault();
+
+    // Validate search term
+    if (!searchTerm.trim()) {
+      setError("Search term is empty");
+      return;
+    }
+
+    try {
+      const response = await fetch(
+        "https://192.168.90.91/apps/test_hr/intranet/search-employee.php",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ search_term: searchTerm }), // Ensure search_term is sent in the request body
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error("Failed to fetch data");
+      }
+
+      const data = await response.json();
+      setResults(data);
+      setEmployeeData(data);
+      console.log(results);
+      setError(null); // Reset error state if request succeeds
+    } catch (error) {
+      setError("Failed to fetch data");
+      console.error(error);
+    }
+  };
 
   const mainBranch = fetchedData.filter(
     (item) => item.br_id >= 1000 && item.br_id <= 2000
@@ -52,14 +89,20 @@ function Intranet() {
     (item) => item.br_id >= 1010100 && item.br_id <= 1010283
   );
 
-  function handleClick(companyID) {
-    setBrId(companyID);
+  function handleClick(branchID) {
+    if (branchID === "1010") {
+      setBrId("1010100");
+    } else if (branchID === "1011") {
+      setBrId("1011000");
+    } else {
+      setBrId(branchID);
+    }
   }
 
   return (
     <>
-      <section className="flex w-full overflow-hidden h-100">
-        <div className="mt-5">
+      <section className="flex">
+        <div className="mt-5 h-full overflow-y-auto sticky top-28 pb-10">
           <Box>
             <SimpleTreeView>
               {mainBranch.map((company, index) => (
@@ -85,7 +128,7 @@ function Intranet() {
                         itemId={branch.br_id}
                         label={branch.br_name.slice(8)}
                         onClick={() => handleClick(branch.br_id)}
-                      />
+                      ></TreeItem>
                     ))}
                 </TreeItem>
               ))}
@@ -93,9 +136,9 @@ function Intranet() {
           </Box>
         </div>
 
-        <div>
-          <div className="mt-5 flex w-full justify-evenly static">
-            <form className="max-w-md w-72">
+        <div className="w-full sticky top-16 h-5/6">
+          <div className="mt-5 flex justify-evenly sticky top-0">
+            <form className="max-w-md w-72" onSubmit={handleSearch}>
               <label
                 htmlFor="default-search"
                 className="mb-2 text-sm font-medium text-gray-900 sr-only"
@@ -124,26 +167,30 @@ function Intranet() {
                   type="search"
                   id="default-search"
                   className="block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 "
-                  placeholder="Нэр, утасаар хайх"
+                  placeholder="НЭР, УТСААР ХАЙХ"
                   required
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
                 />
                 <button
                   type="submit"
+                  onClick={handleSearch}
                   className="text-white absolute end-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 "
                 >
                   Хайх
                 </button>
               </div>
             </form>
-            <Grouped />
+            <Grouped branches={sendlyBranch} />
           </div>
-          <section className="bg-white">
+
+          <section className="bg-white overflow-y-auto">
             <div className="py-8 px-4 mx-auto max-w-screen-2xl  text-center lg:py-16 lg:px-6">
               <div className="grid gap-10 lg:gap-20 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
                 {employeeData.map((item, index) => (
                   <div className="text-center text-gray-500" key={index}>
                     <img
-                      className="mx-auto mb-4 w-25 h-32 rounded-full"
+                      className="mx-auto mb-4 h-32 rounded-full"
                       src={item.photo}
                       alt="employee photo"
                     />

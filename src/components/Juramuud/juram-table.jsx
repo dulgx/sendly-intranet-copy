@@ -6,8 +6,13 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import data from "../../json-files/juram-data.json";
-import pdfIcon from "../../assets/pdf.png";
 import svg1 from "../../assets/svg1.svg";
+
+const openPdf = (title1) => {
+  const pdfUrl = `../../../pdf/${title1}.pdf`;
+  window.open(pdfUrl, "_blank");
+  console.log(pdfUrl);
+};
 
 function createData(name, number, date) {
   return { name, number, date };
@@ -41,7 +46,10 @@ export default function JuramTable({ titleData, icon }) {
                 <TableCell className="w-16 ">
                   <img src={[icon]} alt="icon" className="h-8" />
                 </TableCell>
-                <TableCell className="flex cursor-pointer hover:text-blue-500">
+                <TableCell
+                  className="flex cursor-pointer hover:text-blue-500"
+                  onClick={() => openPdf(row.name)}
+                >
                   {row.name}
                 </TableCell>
                 <TableCell className="w-24 flex">
@@ -52,7 +60,10 @@ export default function JuramTable({ titleData, icon }) {
                   {row.date}
                 </TableCell>
                 <TableCell className="w-24">
-                  <button className="text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg text-sm px-5 py-0.5 text-center me-2 mb-2">
+                  <button
+                    className="text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg text-sm px-5 py-0.5 text-center me-2 mb-2"
+                    onClick={() => openPdf(row.name)}
+                  >
                     {icon === svg1 ? "Нээх" : "Татах"}
                   </button>
                 </TableCell>

@@ -1,21 +1,20 @@
-import * as React from "react";
+import React from "react";
 import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
-import CompanyData from "../json-files/salbar.json";
 
-const companies = CompanyData;
+export default function Grouped({ branches }) {
+  const names = branches.map((branch) => branch.br_name.slice(8));
 
-export default function Grouped() {
-  const options = companies
+  const options = names
     .map((option) => {
-      const branchName = option.br_name.slice(8);
+      const branchName = option;
       if (/^\d+$/.test(branchName) || !/[а-яА-Я]/.test(branchName)) {
         return null;
       }
       const firstLetter = branchName[0].toUpperCase();
       return {
         firstLetter: firstLetter,
-        ...option,
+        branch: option,
       };
     })
     .filter(Boolean);
@@ -29,7 +28,14 @@ export default function Grouped() {
       groupBy={(option) => option.firstLetter}
       getOptionLabel={(option) => option.branch}
       sx={{ width: 300 }}
-      renderInput={(params) => <TextField {...params} label="Салбараар хайх" />}
+      renderInput={(params) => (
+        <TextField {...params} label="Search by Branch" />
+      )}
+      filterOptions={(options, { inputValue }) => {
+        return options.filter((option) =>
+          option.branch.toLowerCase().startsWith(inputValue.toLowerCase())
+        );
+      }}
     />
   );
 }

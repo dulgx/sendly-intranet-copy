@@ -6,22 +6,17 @@ import Intranet from "./components/Intranet";
 import JuramZaavar from "./components/JuramZaavar";
 import VideoZaavar from "./components/VideoZaavar";
 import JuramTable from "./components/Juramuud/juram-table";
-import data from "./json-files/juram-data.json";
 import pdfIcon from "./assets/pdf.png";
 import docIcon from "./assets/doc.png";
 import svg1 from "./assets/svg1.svg";
 
 function indexRoute() {}
 
-//const mainTitles = data.map((mainTitle) => )
-//console.log(mainTitles)
-
 function App() {
   return (
     <>
       <Router>
         <Disclosure1 />
-        <div className="pt-20"></div>
         <Routes>
           <Route path="" element={<Dashboard />} />
           <Route path="/intranet" element={<Intranet />} />
@@ -33,19 +28,19 @@ function App() {
           />
           <Route
             path="/juramzaavar/item-2"
-            element={<JuramTable titleData="ZChiglel" icon={pdfIcon} />}
+            element={<JuramTable titleData="ZChiglel" icon={svg1} />}
           />
           <Route
             path="/juramzaavar/item-3"
-            element={<JuramTable titleData="NBB" icon={pdfIcon} />}
+            element={<JuramTable titleData="NBB" icon={svg1} />}
           />
           <Route
             path="/juramzaavar/item-4"
-            element={<JuramTable titleData="SalbarUA" icon={pdfIcon} />}
+            element={<JuramTable titleData="SalbarUA" icon={svg1} />}
           />
           <Route
             path="/juramzaavar/item-5"
-            element={<JuramTable titleData="HR" icon={pdfIcon} />}
+            element={<JuramTable titleData="HR" icon={svg1} />}
           />
           <Route
             path="/juramzaavar/item-6"
@@ -57,7 +52,7 @@ function App() {
           />
           <Route
             path="/juramzaavar/item-8"
-            element={<JuramTable titleData="ENuhtsul" icon={pdfIcon} />}
+            element={<JuramTable titleData="ENuhtsul" icon={svg1} />}
           />
         </Routes>
       </Router>

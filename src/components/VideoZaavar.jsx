@@ -1,51 +1,83 @@
-import React, { useState, useEffect } from "react";
-import Box from "@mui/material/Box";
-import { SimpleTreeView } from "@mui/x-tree-view/SimpleTreeView";
-import { TreeItem } from "@mui/x-tree-view/TreeItem";
+import React, { useState } from "react";
 
 function VideoZaavar() {
-  const [fetchedData, setFetchedData] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [results, setResults] = useState([]);
+  const [error, setError] = useState(null);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch(
-          "https://192.168.90.91/apps/test_hr/intranet/test.php"
-        );
-        const data = await response.json();
-        setFetchedData(data);
-      } catch (error) {
-        console.error("Error fetching data:", error);
+  const handleSearch = async () => {
+    if (!searchTerm.trim()) {
+      setError("Search term is empty");
+      return;
+    }
+
+    try {
+      const response = await fetch(
+        "https://192.168.90.91/apps/test_hr/intranet/search-employee.php",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ search_term: searchTerm }), // Ensure search_term is sent in the request body
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error("Failed to fetch data");
       }
-    };
 
-    fetchData();
-  }, []);
-
-  const mainBranch = fetchedData.filter(
-    (item) => item.br_id >= 1000 && item.br_id <= 2000
-  );
-
-  const aimagGyalsBranch = fetchedData.filter(
-    (item) => item.br_id >= 1010100 && item.br_id <= 1010283
-  );
-
-  function handleClick() {}
+      const data = await response.json();
+      setResults(data);
+      console.log(results);
+      setError(null); // Reset error state if request succeeds
+    } catch (error) {
+      setError("Failed to fetch data");
+      console.error(error);
+    }
+  };
 
   return (
     <div>
-      <Box>
-        <SimpleTreeView>
-          {mainBranch.map((company, index) => (
-            <TreeItem
-              key={company.id || index}
-              itemId={company.id || index}
-              label={company.br_name.slice(5)}
-              onClick={() => handleClick(company.id)}
-            ></TreeItem>
-          ))}
-        </SimpleTreeView>
-      </Box>
+      <input
+        type="text"
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+      />
+      <button onClick={handleSearch}>Search</button>
+      {error && <div>Error: {error}</div>}
+      <ul>
+        {results.map((item, index) => (
+          <div className="text-center text-gray-500" key={index}>
+            <img
+              className="mx-auto mb-4 h-32 rounded-full"
+              src={item.photo}
+              alt="employee photo"
+            />
+            <h3 className="mb-1 text-base font-bold tracking-tight text-gray-900">
+              <a>{item.name} </a>
+            </h3>
+            <p className="font-semibold text-slate-800 text-sm">
+              {item.position}
+            </p>
+            <p>
+              <span className="text-slate-900 font-semibold text-sm">
+                Гар утас :
+              </span>{" "}
+              {item.mobile_phone}
+            </p>
+            <p className="cursor-pointer hover:text-blue-600 text-sm">
+              <span className="text-slate-900 font-semibold ">И-мэйл :</span>{" "}
+              <a
+                className=" hover:text-cyan-800 hover:font-semibold font-medium text-sm"
+                href={`mailto:${item.email}`}
+              >
+                {item.email}
+              </a>
+            </p>
+          </div>
+        ))}
+      </ul>
     </div>
   );
 }

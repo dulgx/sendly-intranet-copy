@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useState, useEffect } from "react";
 import memoji from "../assets/Memoji-11.png";
 import newsPhoto from "../assets/news.jpg";
 import newsData from "../json-files/news-data.json";
@@ -24,13 +24,28 @@ const BootstrapDialog = styled(Dialog)(({ theme }) => ({
 
 export default function News() {
   const [open, setOpen] = React.useState(false);
+  const [newData, setNewData] = useState({
+    newTitle: null,
+    newDescription: null,
+    newImage: null,
+  });
 
-  const handleClickOpen = () => {
+  const handleClickOpen = (
+    currentTitle,
+    currentDescription,
+    currentImageUrl
+  ) => {
     setOpen(true);
+    setNewData({
+      newTitle: currentTitle,
+      newDescription: currentDescription,
+      newImage: currentImageUrl,
+    });
   };
   const handleClose = () => {
     setOpen(false);
   };
+
   return (
     <div className="bg-white sm:pb-2">
       <div>
@@ -52,7 +67,9 @@ export default function News() {
                 <h3 className="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-blue-600 cursor-pointer">
                   <a
                     href={post.href}
-                    onClick={handleClickOpen}
+                    onClick={() => {
+                      handleClickOpen(post.title, post.description, newsPhoto);
+                    }}
                     className="cursor-pointer"
                   >
                     <span className="absolute inset-0" />
@@ -88,7 +105,6 @@ export default function News() {
                   </time>
                 </div>
               </div>
-
               <React.Fragment>
                 <BootstrapDialog
                   onClose={handleClose}
@@ -96,7 +112,7 @@ export default function News() {
                   open={open}
                 >
                   <DialogTitle sx={{ m: 2, p: 2 }} id="customized-dialog-title">
-                    {post.title}
+                    {newData.newTitle}
                   </DialogTitle>
                   <IconButton
                     aria-label="close"
@@ -113,13 +129,13 @@ export default function News() {
                   <DialogContent dividers>
                     <div className="flex justify-center w-full">
                       <img
-                        src={newsPhoto}
+                        src={newData.newImage}
                         alt="news-photo"
                         className=" m-2 rounded-lg"
                       />
                     </div>
                     <Typography gutterBottom className="p-4">
-                      {post.description}
+                      {newData.newDescription}
                     </Typography>
                   </DialogContent>
                   <DialogActions>
