@@ -9,6 +9,7 @@ import JuramTable from "./components/Juramuud/juram-table";
 import pdfIcon from "./assets/pdf.png";
 import docIcon from "./assets/doc.png";
 import svg1 from "./assets/svg1.svg";
+import Test from "./components/Test/Test";
 
 function indexRoute() {}
 
@@ -22,6 +23,7 @@ function App() {
           <Route path="/intranet" element={<Intranet />} />
           <Route path="/juramzaavar/*" element={<JuramZaavar />} />
           <Route path="/videozaavar" element={<VideoZaavar />} />
+          <Route path="/test" element={<Test />} />
           <Route
             path="/juramzaavar/item-1"
             element={<JuramTable titleData="ZUA" icon={svg1} />}

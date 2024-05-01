@@ -12,6 +12,7 @@ function Intranet() {
   const [results, setResults] = useState([]);
   const [error, setError] = useState(null);
 
+  // САЛБАРИЙН ЖАГСААЛТ БОЛОН САЛБАРААР БҮЛЭГЛЭН ХАРУУЛАХ
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -43,6 +44,7 @@ function Intranet() {
     fetchEmployeeData();
   }, [brId]);
 
+  //НЭР, УТСААР ХАЙХ
   const handleSearch = async (e) => {
     e.preventDefault();
 
@@ -79,6 +81,7 @@ function Intranet() {
     }
   };
 
+  //САЛБАРЫН ЖАГСААЛТ ФИЛТЕР
   const mainBranch = fetchedData.filter(
     (item) => item.br_id >= 1000 && item.br_id <= 2000
   );
@@ -102,6 +105,7 @@ function Intranet() {
   return (
     <>
       <section className="flex">
+        {/* Салбарын жагсаалт */}
         <div className="mt-5 h-full overflow-y-auto sticky top-28 pb-10">
           <Box>
             <SimpleTreeView>
@@ -136,7 +140,11 @@ function Intranet() {
           </Box>
         </div>
 
+        {/* RIGHT SIDE */}
+
         <div className="w-full sticky top-16 h-5/6">
+          {/* ХАЙХ ХЭСЭГ */}
+
           <div className="mt-5 flex justify-evenly sticky top-0">
             <form className="max-w-md w-72" onSubmit={handleSearch}>
               <label
@@ -181,8 +189,10 @@ function Intranet() {
                 </button>
               </div>
             </form>
-            <Grouped branches={sendlyBranch} />
+            <Grouped sBranch={sendlyBranch} gBranch={gyalsBranch} />
           </div>
+
+          {/* EMPLOYEE LIST */}
 
           <section className="bg-white overflow-y-auto">
             <div className="py-8 px-4 mx-auto max-w-screen-2xl  text-center lg:py-16 lg:px-6">
@@ -198,8 +208,12 @@ function Intranet() {
                       <a>{item.name} </a>
                     </h3>
                     <p className="font-semibold text-slate-800 text-sm">
-                      {item.position}
+                      <p className="text-slate-500 text-md">
+                        {item.branch_name}
+                      </p>
+                      <p className=" italic">{item.position}</p>
                     </p>
+
                     <p>
                       <span className="text-slate-900 font-semibold text-sm">
                         Гар утас :
@@ -207,11 +221,12 @@ function Intranet() {
                       {item.mobile_phone}
                     </p>
                     <p className="cursor-pointer hover:text-blue-600 text-sm">
-                      <span className="text-slate-900 font-semibold ">
+                      <span className="text-slate-900 font-semibold  text-sm">
                         И-мэйл :
                       </span>{" "}
                       <a
-                        className=" hover:text-cyan-800 hover:font-semibold font-medium text-sm"
+                        className="  hover:font-semibold font-medium text-sm hover:text-blue-600 text-slate-900"
+                        target="_blank"
                         href={`mailto:${item.email}`}
                       >
                         {item.email}

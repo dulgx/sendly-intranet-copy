@@ -17,6 +17,7 @@ function Disclosure1() {
     { name: "Intranet", href: "/intranet", current: false },
     { name: "Журам, заавар", href: "/juramzaavar", current: false },
     { name: "Видео заавар", href: "/videozaavar", current: false },
+    { name: "Test", href: "/test", current: false },
   ];
   const userNavigation = [
     { name: "Your Profile", href: "#" },

@@ -2,8 +2,12 @@ import React from "react";
 import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
 
-export default function Grouped({ branches }) {
-  const names = branches.map((branch) => branch.br_name.slice(8));
+export default function Grouped({ sBranch, gBranch }) {
+  const names1 = sBranch.map((branch) => "Sendly" + branch.br_name.slice(8));
+  const gnames = gBranch.map((branch) => branch.br_name.slice(8));
+
+  const mixedBranch = sBranch.concat(gBranch);
+  const names = mixedBranch.map((branch) => branch.br_name.slice(8));
 
   const options = names
     .map((option) => {
@@ -28,9 +32,7 @@ export default function Grouped({ branches }) {
       groupBy={(option) => option.firstLetter}
       getOptionLabel={(option) => option.branch}
       sx={{ width: 300 }}
-      renderInput={(params) => (
-        <TextField {...params} label="Search by Branch" />
-      )}
+      renderInput={(params) => <TextField {...params} label="Салбараар хайх" />}
       filterOptions={(options, { inputValue }) => {
         return options.filter((option) =>
           option.branch.toLowerCase().startsWith(inputValue.toLowerCase())
