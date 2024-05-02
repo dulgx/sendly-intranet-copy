@@ -3,7 +3,7 @@ import { Fragment } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import sendlyLogo from "../assets/logo2.png";
-import profileImage from "../assets/profile-icon.jfif";
+import profileImage from "../assets/profile-icon.png";
 import { NavLink } from "react-router-dom";
 
 function Disclosure1() {
@@ -13,11 +13,11 @@ function Disclosure1() {
     imageUrl: { profileImage },
   };
   const navigation = [
-    { name: "Нүүр хуудас", href: "home", current: true },
-    { name: "Intranet", href: "/intranet", current: false },
-    { name: "Журам, заавар", href: "/juramzaavar", current: false },
-    { name: "Видео заавар", href: "/videozaavar", current: false },
-    { name: "Test", href: "/test", current: false },
+    { name: "Нүүр хуудас", href: "/home", current: true },
+    { name: "Intranet", href: "/intranet/intranet", current: false },
+    { name: "Журам, заавар", href: "/intranet/juramzaavar", current: false },
+    { name: "Видео заавар", href: "/intranet/videozaavar", current: false },
+    { name: "Test", href: "/intranet/test", current: false },
   ];
   const userNavigation = [
     { name: "Your Profile", href: "#" },

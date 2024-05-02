@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import memoji from "../assets/Memoji-11.png";
-import newsPhoto from "../assets/news.jpg";
+import memoji from "../assets/Memoji.png";
+import newsPhoto from "../assets/news.png";
 import newsData from "../json-files/news-data.json";
 import Button from "@mui/material/Button";
 import { styled } from "@mui/material/styles";

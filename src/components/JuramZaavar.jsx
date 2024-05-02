@@ -5,42 +5,42 @@ const posts = [
   {
     id: 1,
     title: "Зээлийн үйл ажиллагаа",
-    link: "/juramzaavar/item-1",
+    link: "/intranet/juramzaavar/item-1",
   },
   {
     id: 2,
     title: "Зээлийн үйл ажиллагааны чиглэл, зөвлөмж ",
-    link: "/juramzaavar/item-2",
+    link: "/intranet/juramzaavar/item-2",
   },
   {
     id: 3,
     title: "НББ ажиллагаа ",
-    link: "/juramzaavar/item-3",
+    link: "/intranet/juramzaavar/item-3",
   },
   {
     id: 4,
     title: " Салбарын үйл ажиллагааны журам",
-    link: "/juramzaavar/item-4",
+    link: "/intranet/juramzaavar/item-4",
   },
   {
     id: 5,
     title: "Хүний нөөцийн журам",
-    link: "/juramzaavar/item-5",
+    link: "/intranet/juramzaavar/item-5",
   },
   {
     id: 6,
     title: "Албан бичиг",
-    link: "/juramzaavar/item-6",
+    link: "/intranet/juramzaavar/item-6",
   },
   {
     id: 7,
     title: "Хамтран ажиллах гэрээ",
-    link: "/juramzaavar/item-7",
+    link: "/intranet/juramzaavar/item-7",
   },
   {
     id: 8,
     title: "Бүтээгдэхүүн үйлчигээний ерөнхий нөхцөл",
-    link: "/juramzaavar/item-8",
+    link: "/intranet/juramzaavar/item-8",
   },
 ];
 

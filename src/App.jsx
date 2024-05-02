@@ -19,41 +19,41 @@ function App() {
       <Router>
         <Disclosure1 />
         <Routes>
-          <Route path="home" element={<Dashboard />} />
-          <Route path="/intranet" element={<Intranet />} />
-          <Route path="/juramzaavar/*" element={<JuramZaavar />} />
-          <Route path="/videozaavar" element={<VideoZaavar />} />
-          <Route path="/test" element={<Test />} />
+          <Route path="/home" element={<Dashboard />} />
+          <Route path="/intranet/intranet" element={<Intranet />} />
+          <Route path="/intranet/juramzaavar/*" element={<JuramZaavar />} />
+          <Route path="/intranet/videozaavar" element={<VideoZaavar />} />
+          <Route path="/intranet/test" element={<Test />} />
           <Route
-            path="/juramzaavar/item-1"
+            path="/intranet/juramzaavar/item-1"
             element={<JuramTable titleData="ZUA" icon={svg1} />}
           />
           <Route
-            path="/juramzaavar/item-2"
+            path="/intranet/juramzaavar/item-2"
             element={<JuramTable titleData="ZChiglel" icon={svg1} />}
           />
           <Route
-            path="/juramzaavar/item-3"
+            path="/intranet/juramzaavar/item-3"
             element={<JuramTable titleData="NBB" icon={svg1} />}
           />
           <Route
-            path="/juramzaavar/item-4"
+            path="/intranet/juramzaavar/item-4"
             element={<JuramTable titleData="SalbarUA" icon={svg1} />}
           />
           <Route
-            path="/juramzaavar/item-5"
+            path="/intranet/juramzaavar/item-5"
             element={<JuramTable titleData="HR" icon={svg1} />}
           />
           <Route
-            path="/juramzaavar/item-6"
+            path="/intranet/juramzaavar/item-6"
             element={<JuramTable titleData="Blank" icon={docIcon} />}
           />
           <Route
-            path="/juramzaavar/item-7"
+            path="/intranet/juramzaavar/item-7"
             element={<JuramTable titleData="Contract" icon={docIcon} />}
           />
           <Route
-            path="/juramzaavar/item-8"
+            path="/intranet/juramzaavar/item-8"
             element={<JuramTable titleData="ENuhtsul" icon={svg1} />}
           />
         </Routes>
