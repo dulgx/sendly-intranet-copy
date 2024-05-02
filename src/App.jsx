@@ -19,7 +19,7 @@ function App() {
       <Router>
         <Disclosure1 />
         <Routes>
-          <Route path="" element={<Dashboard />} />
+          <Route path="home" element={<Dashboard />} />
           <Route path="/intranet" element={<Intranet />} />
           <Route path="/juramzaavar/*" element={<JuramZaavar />} />
           <Route path="/videozaavar" element={<VideoZaavar />} />

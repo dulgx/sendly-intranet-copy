@@ -1,18 +1,25 @@
-import React from "react";
+import React, { useMemo } from "react";
 import Box from "@mui/material/Box";
 import { SimpleTreeView } from "@mui/x-tree-view/SimpleTreeView";
 import { TreeItem } from "@mui/x-tree-view/TreeItem";
 
 const BranchTree = ({ fetchedData, handleClick }) => {
-  const mainBranch = fetchedData.filter(
-    (item) => item.br_id >= 1000 && item.br_id <= 2000
-  );
-  const sendlyBranch = fetchedData.filter(
-    (item) => item.br_id >= 1011000 && item.br_id <= 1091276
-  );
-  const gyalsBranch = fetchedData.filter(
-    (item) => item.br_id >= 1010100 && item.br_id <= 1010283
-  );
+  const mainBranch = useMemo(() => {
+    return fetchedData.filter(
+      (item) => item.br_id >= 1000 && item.br_id <= 2000
+    );
+  }, [fetchedData]);
+
+  const sendlyBranch = useMemo(() => {
+    return fetchedData.filter(
+      (item) => item.br_id >= 1011000 && item.br_id <= 1091276
+    );
+  }, [fetchedData]);
+  const gyalsBranch = useMemo(() => {
+    return fetchedData.filter(
+      (item) => item.br_id >= 1010100 && item.br_id <= 1010283
+    );
+  }, [fetchedData]);
   return (
     <div className=" mt-12 h-full overflow-y-auto sticky top-28 pb-10">
       <Box>
