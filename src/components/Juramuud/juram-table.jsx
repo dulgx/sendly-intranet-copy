@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
@@ -7,11 +7,33 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import data from "../../json-files/juram-data.json";
 import svg1 from "../../assets/svg1.svg";
+import WebViewer from "@pdftron/pdfjs-express-viewer";
 
 const openPdf = (title1) => {
   const pdfUrl = `../../../pdf/${title1}.pdf`;
   window.open(pdfUrl, "_blank");
   console.log(pdfUrl);
+
+  WebViewer(
+    {
+      path: "/webviewer/lib",
+      initialDoc: pdfUrl,
+    },
+    viewer.current
+  ).then((instance) => {
+    // now you can access APIs through the WebViewer instance
+    const { Core } = instance;
+
+    // adding an event listener for when a document is loaded
+    Core.documentViewer.addEventListener("documentLoaded", () => {
+      console.log("document loaded");
+    });
+
+    // adding an event listener for when the page number has changed
+    Core.documentViewer.addEventListener("pageNumberUpdated", (pageNumber) => {
+      console.log(`Page number is: ${pageNumber}`);
+    });
+  });
 };
 
 function createData(name, number, date) {
@@ -22,6 +44,8 @@ export default function JuramTable({ titleData, icon }) {
   const rows = data[titleData].map((item) =>
     createData(item.title, item.numberID, item.date)
   );
+
+  const viewer = useRef(null);
 
   return (
     <div className="flex justify-center">
@@ -49,6 +73,7 @@ export default function JuramTable({ titleData, icon }) {
                 <TableCell
                   className="flex cursor-pointer hover:text-blue-500"
                   onClick={() => openPdf(row.name)}
+                  ref={viewer}
                 >
                   {row.name}
                 </TableCell>

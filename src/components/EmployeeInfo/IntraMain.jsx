@@ -1,18 +1,18 @@
 import React, { useState, useEffect } from "react";
-import BranchTree from "../Test/BranchTree";
-import EmployeeList from "../Test/EmployeeList";
-import SearchBar from "../Test/SearchBar";
+import BranchTree from "./BranchTree";
+import EmployeeList from "./EmployeeList";
+import SearchBar from "./SearchBar";
 
 const Test = () => {
   const [fetchedData, setFetchedData] = useState([]);
   const [employeeData, setEmployeeData] = useState([]);
   const [brId, setBrId] = useState("1011000");
   const [searchTerm, setSearchTerm] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
   const [results, setResults] = useState([]);
   const [error, setError] = useState(null);
-  const [isLoading, setIsLoading] = useState(false);
 
-  // Fetching Branch Data
+  // Fetching САЛБАРИЙН ЖАГСААЛТ
   useEffect(() => {
     const fetchData = async () => {
       setIsLoading(true);
@@ -58,7 +58,6 @@ const Test = () => {
   const handleSearch = async (e) => {
     e.preventDefault();
 
-    // Validate search term
     if (!searchTerm.trim()) {
       setError("Search term is empty");
       return;

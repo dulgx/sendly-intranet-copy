@@ -15,11 +15,12 @@ const EmployeeList = ({ employeeData }) => {
               <h3 className="mb-1 text-base font-bold tracking-tight text-gray-900">
                 <a>{item.name} </a>
               </h3>
-              <p className="font-semibold text-slate-800 text-sm">
-                <p className="text-slate-500 text-md">{item.branch_name}</p>
-                <p className=" italic">{item.position}</p>
+              <p className="font-semibold text-slate-500 text-sm">
+                {item.branch_name}
               </p>
-
+              <p className="font-semibold text-slate-800 text-sm italic">
+                {item.position}
+              </p>
               <p>
                 <span className="text-slate-900 font-semibold text-sm">
                   Гар утас :

@@ -13,11 +13,12 @@ function Disclosure1() {
     imageUrl: { profileImage },
   };
   const navigation = [
-    { name: "Нүүр хуудас", href: "/home", current: true },
-    { name: "Intranet", href: "/intranet/intranet", current: false },
-    { name: "Журам, заавар", href: "/intranet/juramzaavar", current: false },
-    { name: "Видео заавар", href: "/intranet/videozaavar", current: false },
-    { name: "Test", href: "/intranet/test", current: false },
+    { name: "Нүүр хуудас", href: "/", current: true },
+    { name: "Intranet", href: "/intranet", current: false },
+    { name: "Журам, заавар", href: "/juramzaavar", current: false },
+    { name: "Видео заавар", href: "/videozaavar", current: false },
+    { name: "Test", href: "/test", current: false },
+    { name: "Pdf", href: "/test-pdf", current: false },
   ];
   const userNavigation = [
     { name: "Your Profile", href: "#" },

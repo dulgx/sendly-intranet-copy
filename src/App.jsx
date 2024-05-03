@@ -9,51 +9,53 @@ import JuramTable from "./components/Juramuud/juram-table";
 import pdfIcon from "./assets/pdf.png";
 import docIcon from "./assets/doc.png";
 import svg1 from "./assets/svg1.svg";
-import Test from "./components/Test/Test";
+import IntraMain from "./components/EmployeeInfo/IntraMain";
+import Pdf from "./components/Pdf";
 
 function indexRoute() {}
 
 function App() {
   return (
     <>
-      <Router>
+      <Router basename="/intranet/">
         <Disclosure1 />
         <Routes>
-          <Route path="/home" element={<Dashboard />} />
-          <Route path="/intranet/intranet" element={<Intranet />} />
-          <Route path="/intranet/juramzaavar/*" element={<JuramZaavar />} />
-          <Route path="/intranet/videozaavar" element={<VideoZaavar />} />
-          <Route path="/intranet/test" element={<Test />} />
+          <Route path="/" element={<Dashboard />} />
+          <Route path="/intranet" element={<IntraMain />} />
+          <Route path="/juramzaavar/*" element={<JuramZaavar />} />
+          <Route path="/videozaavar" element={<VideoZaavar />} />
+          <Route path="/test" element={<IntraMain />} />
+          <Route path="/test-pdf" element={<Pdf />} />
           <Route
-            path="/intranet/juramzaavar/item-1"
+            path="/juramzaavar/item-1"
             element={<JuramTable titleData="ZUA" icon={svg1} />}
           />
           <Route
-            path="/intranet/juramzaavar/item-2"
+            path="/juramzaavar/item-2"
             element={<JuramTable titleData="ZChiglel" icon={svg1} />}
           />
           <Route
-            path="/intranet/juramzaavar/item-3"
+            path="/juramzaavar/item-3"
             element={<JuramTable titleData="NBB" icon={svg1} />}
           />
           <Route
-            path="/intranet/juramzaavar/item-4"
+            path="/juramzaavar/item-4"
             element={<JuramTable titleData="SalbarUA" icon={svg1} />}
           />
           <Route
-            path="/intranet/juramzaavar/item-5"
+            path="/juramzaavar/item-5"
             element={<JuramTable titleData="HR" icon={svg1} />}
           />
           <Route
-            path="/intranet/juramzaavar/item-6"
+            path="/juramzaavar/item-6"
             element={<JuramTable titleData="Blank" icon={docIcon} />}
           />
           <Route
-            path="/intranet/juramzaavar/item-7"
+            path="/juramzaavar/item-7"
             element={<JuramTable titleData="Contract" icon={docIcon} />}
           />
           <Route
-            path="/intranet/juramzaavar/item-8"
+            path="/juramzaavar/item-8"
             element={<JuramTable titleData="ENuhtsul" icon={svg1} />}
           />
         </Routes>
