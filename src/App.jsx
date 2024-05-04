@@ -13,8 +13,6 @@ import svg1 from "./assets/svg1.svg";
 import IntraMain from "./components/EmployeeInfo/IntraMain";
 import Pdf from "./components/Pdf";
 
-function indexRoute() {}
-
 function App() {
   return (
     <>
@@ -22,7 +20,7 @@ function App() {
         <Disclosure1 />
         <Routes>
           <Route path="/" element={<Dashboard />} />
-          <Route path="/intranet" element={<IntraMain />} />
+          <Route path="/employee-directories" element={<IntraMain />} />
           <Route path="/juramzaavar/*" element={<JuramZaavar />} />
           <Route path="/videozaavar" element={<VideoZaavar />} />
           <Route path="/test" element={<IntraMain />} />

@@ -14,11 +14,11 @@ function Disclosure1() {
   };
   const navigation = [
     { name: "Нүүр хуудас", href: "/", current: true },
-    { name: "Intranet", href: "/intranet", current: false },
+    { name: "Intranet", href: "/employee-directories", current: false },
     { name: "Журам, заавар", href: "/juramzaavar", current: false },
-    { name: "Видео заавар", href: "/videozaavar", current: false },
+    { name: "Видео хичээл", href: "/videozaavar", current: false },
     { name: "Test", href: "/test", current: false },
-    { name: "FTP", href: "/test-pdf", current: false },
+    { name: "PDF", href: "/test-pdf", current: false },
   ];
   const userNavigation = [
     { name: "Your Profile", href: "#" },

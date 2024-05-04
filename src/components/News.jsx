@@ -55,9 +55,9 @@ export default function News() {
               key={post.id}
               className="bg-gradient-to-r from-indigo-100 via-blue-50 to-red-50 flex max-w-xl flex-col items-start justify-between p-5 rounded-xl shadow-md"
             >
-              <div className="flex justify-center w-full">
+              <div className="flex justify-center w-full h-60">
                 <img
-                  src={newsPhoto}
+                  src={post.photo}
                   alt="news-photo"
                   className=" m-2 rounded-lg"
                 />
@@ -68,7 +68,7 @@ export default function News() {
                   <a
                     href={post.href}
                     onClick={() => {
-                      handleClickOpen(post.title, post.description, newsPhoto);
+                      handleClickOpen(post.title, post.description, post.photo);
                     }}
                     className="cursor-pointer"
                   >
