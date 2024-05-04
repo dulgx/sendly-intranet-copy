@@ -1,3 +1,4 @@
+import React from "react";
 import tableIcon from "../assets/table.svg";
 import { Link } from "react-router-dom";
 
