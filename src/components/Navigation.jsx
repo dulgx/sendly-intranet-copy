@@ -18,7 +18,7 @@ function Disclosure1() {
     { name: "Журам, заавар", href: "/juramzaavar", current: false },
     { name: "Видео заавар", href: "/videozaavar", current: false },
     { name: "Test", href: "/test", current: false },
-    { name: "Pdf", href: "/test-pdf", current: false },
+    { name: "FTP", href: "/test-pdf", current: false },
   ];
   const userNavigation = [
     { name: "Your Profile", href: "#" },

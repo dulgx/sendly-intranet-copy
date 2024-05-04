@@ -11,6 +11,7 @@ import docIcon from "./assets/doc.png";
 import svg1 from "./assets/svg1.svg";
 import IntraMain from "./components/EmployeeInfo/IntraMain";
 import Pdf from "./components/Pdf";
+import FtpConnection from "./components/FtpConnection";
 
 function indexRoute() {}
 
@@ -25,7 +26,7 @@ function App() {
           <Route path="/juramzaavar/*" element={<JuramZaavar />} />
           <Route path="/videozaavar" element={<VideoZaavar />} />
           <Route path="/test" element={<IntraMain />} />
-          <Route path="/test-pdf" element={<Pdf />} />
+          <Route path="/test-pdf" element={<FtpConnection />} />
           <Route
             path="/juramzaavar/item-1"
             element={<JuramTable titleData="ZUA" icon={svg1} />}
