@@ -10,7 +10,7 @@ import svg1 from "../../assets/svg1.svg";
 import PdfRender from "./Pdf.jsx";
 
 const openPdf = (title1) => {
-  const pdfUrl = `../../../pdf/${title1}.pdf`;
+  const pdfUrl = `../../../public/pdf/${title1}.pdf`;
   window.open(pdfUrl, "_blank");
   console.log(pdfUrl);
 };
