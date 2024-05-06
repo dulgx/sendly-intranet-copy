@@ -11,7 +11,7 @@ import pdfIcon from "./assets/pdf.png";
 import docIcon from "./assets/doc.png";
 import svg1 from "./assets/svg1.svg";
 import IntraMain from "./components/EmployeeInfo/IntraMain";
-import Pdf from "./components/Pdf";
+import Pdf from "./components/Juramuud/Pdf";
 
 function App() {
   return (

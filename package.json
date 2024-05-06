@@ -50,5 +50,9 @@
     "tailwindcss": "^3.4.3",
     "tailwindcss-animated": "^1.0.1",
     "vite": "^5.2.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pdfjs-express/custom-annotation-samples.git"
   }
 }

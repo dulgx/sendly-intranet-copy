@@ -7,33 +7,12 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import data from "../../json-files/juram-data.json";
 import svg1 from "../../assets/svg1.svg";
-import WebViewer from "@pdftron/pdfjs-express-viewer";
+import PdfRender from "./Pdf.jsx";
 
 const openPdf = (title1) => {
   const pdfUrl = `../../../pdf/${title1}.pdf`;
   window.open(pdfUrl, "_blank");
   console.log(pdfUrl);
-
-  WebViewer(
-    {
-      path: "/webviewer/lib",
-      initialDoc: pdfUrl,
-    },
-    viewer.current
-  ).then((instance) => {
-    // now you can access APIs through the WebViewer instance
-    const { Core } = instance;
-
-    // adding an event listener for when a document is loaded
-    Core.documentViewer.addEventListener("documentLoaded", () => {
-      console.log("document loaded");
-    });
-
-    // adding an event listener for when the page number has changed
-    Core.documentViewer.addEventListener("pageNumberUpdated", (pageNumber) => {
-      console.log(`Page number is: ${pageNumber}`);
-    });
-  });
 };
 
 function createData(name, number, date) {
@@ -85,12 +64,10 @@ export default function JuramTable({ titleData, icon }) {
                   {row.date}
                 </TableCell>
                 <TableCell className="w-24">
-                  <button
-                    className="text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg text-sm px-5 py-0.5 text-center me-2 mb-2"
-                    onClick={() => openPdf(row.name)}
-                  >
-                    {icon === svg1 ? "Нээх" : "Татах"}
-                  </button>
+                  <PdfRender
+                    title={row.name}
+                    filePath={`../../../pdf/${row.name}.pdf`}
+                  />
                 </TableCell>
               </TableRow>
             ))}
