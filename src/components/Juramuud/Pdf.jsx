@@ -99,7 +99,7 @@ const PdfRender = ({ title, filePath }) => {
             <div className="flex flex-col items-center">
               <section
                 id="pdf-section"
-                className="flex flex-col items-center w-full h-screen"
+                className="flex flex-col items-center w-full h-screen "
               >
                 <Document file={filePath} onLoadSuccess={onDocumentLoadSuccess}>
                   {Array.from(new Array(numPages), (el, index) => (
@@ -107,7 +107,7 @@ const PdfRender = ({ title, filePath }) => {
                       key={`page_${index + 1}`}
                       pageNumber={index + 1}
                       scale={scale}
-                      className="w-full h-screen m-5"
+                      className="w-full h-[850px] m-5"
                     />
                   ))}
                 </Document>
