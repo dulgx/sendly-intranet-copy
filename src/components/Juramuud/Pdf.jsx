@@ -69,7 +69,7 @@ const PdfRender = ({ title, filePath }) => {
           onClose={handleClose}
           aria-labelledby="customized-dialog-title"
           open={open}
-          maxWidth="lg"
+          maxWidth="md"
           fullWidth
         >
           <DialogTitle
@@ -93,7 +93,7 @@ const PdfRender = ({ title, filePath }) => {
           <DialogContent
             dividers
             style={{
-              backgroundColor: "#71717a",
+              backgroundColor: "#e2e8f0",
             }}
           >
             <div className="flex flex-col items-center">
