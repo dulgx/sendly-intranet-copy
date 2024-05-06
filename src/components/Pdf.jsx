@@ -1,17 +1,7 @@
-import React, { useState } from "react";
-import { Document, Page } from "react-pdf";
-import pdfFile from "../assets/pdf-files/etz.pdf";
+import React from "react";
 
 const Pdf = () => {
-  return (
-    <Document
-      file={pdfFile}
-      onLoadSuccess={() => console.log("PDF loaded successfully")}
-      onLoadError={(error) => console.error("Error loading PDF:", error)}
-    >
-      <Page pageNumber={1} />
-    </Document>
-  );
+  return <div></div>;
 };
 
 export default Pdf;
