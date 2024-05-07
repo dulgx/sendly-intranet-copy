@@ -1,27 +1,39 @@
-import React from "react";
+import React, { useMemo } from "react";
 import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
 
-export default function SearchByBranch({ sBranch, gBranch }) {
-  const names1 = sBranch.map((branch) => "Sendly" + branch.br_name.slice(8));
-  const gnames = gBranch.map((branch) => branch.br_name.slice(8));
+export default function SearchByBranch({ branches }) {
+  const sendlyBranch = useMemo(() => {
+    return branches
+      .filter((item) => item.br_id >= 1011000 && item.br_id <= 1091276)
+      .map((item) => ({
+        ...item,
+        main_branch: "Сэндли",
+      }));
+  }, [branches]);
 
-  const mixedBranch = sBranch.concat(gBranch);
-  const names = mixedBranch.map((branch) => branch.br_name.slice(8));
+  const gyalsBranch = useMemo(() => {
+    return branches
+      .filter((item) => item.br_id >= 1010100 && item.br_id <= 1010283)
+      .map((item) => ({
+        ...item,
+        main_branch: "Гялс төгрөг",
+      }));
+  }, [branches]);
 
-  const options = names
-    .map((option) => {
-      const branchName = option;
-      if (/^\d+$/.test(branchName) || !/[а-яА-Я]/.test(branchName)) {
-        return null;
-      }
-      const firstLetter = branchName[0].toUpperCase();
-      return {
-        firstLetter: firstLetter,
-        branch: option,
-      };
-    })
-    .filter(Boolean);
+  const branchBoth = useMemo(() => {
+    return sendlyBranch.concat(gyalsBranch);
+  }, [sendlyBranch, gyalsBranch]);
+
+  console.log(branchBoth);
+
+  const options = branchBoth.map((option) => {
+    const firstLetter = option.br_name.slice(8).charAt(0).toUpperCase();
+    return {
+      firstLetter,
+      ...option,
+    };
+  });
 
   return (
     <Autocomplete
@@ -30,14 +42,13 @@ export default function SearchByBranch({ sBranch, gBranch }) {
         (a, b) => -b.firstLetter.localeCompare(a.firstLetter)
       )}
       groupBy={(option) => option.firstLetter}
-      getOptionLabel={(option) => option.branch}
+      getOptionLabel={(option) =>
+        option.br_name.slice(8) + "-" + option.main_branch
+      }
       sx={{ width: 300 }}
-      renderInput={(params) => <TextField {...params} label="Салбараар хайх" />}
-      filterOptions={(options, { inputValue }) => {
-        return options.filter((option) =>
-          option.branch.toLowerCase().startsWith(inputValue.toLowerCase())
-        );
-      }}
+      renderInput={(params) => (
+        <TextField {...params} label="With categories" />
+      )}
     />
   );
 }

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import BranchTree from "./BranchTree";
 import EmployeeList from "./EmployeeList";
 import SearchBar from "./SearchBar";
+import SearchByBranch from "./SearchByBranch";
 
 const Test = () => {
   const [fetchedData, setFetchedData] = useState([]);
@@ -105,12 +106,14 @@ const Test = () => {
     <section className="flex">
       <BranchTree fetchedData={fetchedData} handleClick={handleClick} />
 
-      <div className="w-full sticky top-16 h-5/6">
-        <SearchBar
-          searchTerm={searchTerm}
-          setSearchTerm={setSearchTerm}
-          handleSearch={handleSearch}
-        />
+      <div className="w-full sticky top-16 h-5/6 ">
+        <div className="flex justify-center items-center p-4 ">
+          <SearchBar
+            searchTerm={searchTerm}
+            setSearchTerm={setSearchTerm}
+            handleSearch={handleSearch}
+          />
+        </div>
 
         {isLoading ? (
           <div className="flex justify-center items-center h-full w-full pt-40">

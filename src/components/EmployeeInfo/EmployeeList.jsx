@@ -3,8 +3,8 @@ import React from "react";
 const EmployeeList = ({ employeeData }) => {
   return (
     <section className="bg-white overflow-y-auto">
-      <div className="py-8 px-4 mx-auto max-w-screen-2xl  text-center lg:py-16 lg:px-6">
-        <div className="grid gap-10 lg:gap-20 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
+      <div className="py-8 px-4 mx-auto max-w-screen-2xl  text-center lg:py-10 lg:px-6">
+        <div className="grid gap-10 lg:gap-16 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
           {employeeData.map((item, index) => (
             <div className="text-center text-gray-500" key={index}>
               <img
