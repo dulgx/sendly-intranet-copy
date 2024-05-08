@@ -51,7 +51,6 @@ export default function JuramTable({ titleData, icon }) {
                 </TableCell>
                 <TableCell
                   className="flex cursor-pointer hover:text-blue-500"
-                  onClick={() => openPdf(row.name)}
                   ref={viewer}
                 >
                   {row.name}
@@ -64,10 +63,24 @@ export default function JuramTable({ titleData, icon }) {
                   {row.date}
                 </TableCell>
                 <TableCell className="w-24">
-                  <PdfRender
-                    title={row.name}
-                    filePath={`../../../pdf/${row.name}.pdf`}
-                  />
+                  {icon === svg1 ? (
+                    <PdfRender
+                      title={row.name}
+                      filePath={`../../../public/pdf/${row.name}.pdf`}
+                    />
+                  ) : (
+                    <button
+                      onClick={() =>
+                        window.open(
+                          `../../../public/pdf/${row.name}.docx`,
+                          "_blank"
+                        )
+                      }
+                      className="text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg text-sm px-5 py-0.5 text-center me-2 mb-2 h-6"
+                    >
+                      Татах
+                    </button>
+                  )}
                 </TableCell>
               </TableRow>
             ))}

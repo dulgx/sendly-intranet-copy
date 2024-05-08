@@ -17,8 +17,6 @@ function Disclosure1() {
     { name: "Intranet", href: "/employee-directories", current: false },
     { name: "Журам, заавар", href: "/juramzaavar", current: false },
     { name: "Видео хичээл", href: "/videozaavar", current: false },
-    { name: "Test", href: "/test", current: false },
-    { name: "PDF", href: "/test-pdf", current: false },
   ];
   const userNavigation = [
     { name: "Your Profile", href: "#" },
@@ -60,6 +58,7 @@ function Disclosure1() {
                     </div>
                   </div>
                 </div>
+                {/*
                 <div className="hidden md:block">
                   <div className="ml-4 flex items-center md:ml-6">
                     <button
@@ -71,7 +70,7 @@ function Disclosure1() {
                       <BellIcon className="h-6 w-6" aria-hidden="true" />
                     </button>
 
-                    {/* Profile dropdown */}
+                    {/* Profile dropdown 
                     <Menu as="div" className="relative ml-3">
                       <div>
                         <Menu.Button className="relative flex max-w-xs items-center rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
@@ -114,6 +113,8 @@ function Disclosure1() {
                     </Menu>
                   </div>
                 </div>
+
+        */}
                 <div className="-mr-2 flex md:hidden">
                   {/* Mobile menu button */}
                   <Disclosure.Button className="relative inline-flex items-center justify-center rounded-md bg-gray-800 p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">

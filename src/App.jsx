@@ -3,15 +3,13 @@ import "./App.css";
 import Dashboard from "./components/Dashboard";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Disclosure1 from "./components/Navigation";
-import Intranet from "./components/Intranet";
-import JuramZaavar from "./components/JuramZaavar";
+import JuramZaavar from "./components/Juramuud/JuramZaavar";
 import VideoZaavar from "./components/VideoZaavar";
 import JuramTable from "./components/Juramuud/juram-table";
 import pdfIcon from "./assets/pdf.png";
 import docIcon from "./assets/doc.png";
 import svg1 from "./assets/svg1.svg";
 import IntraMain from "./components/EmployeeInfo/IntraMain";
-import Pdf from "./components/Juramuud/Pdf";
 
 function App() {
   return (
@@ -23,8 +21,6 @@ function App() {
           <Route path="/employee-directories" element={<IntraMain />} />
           <Route path="/juramzaavar/*" element={<JuramZaavar />} />
           <Route path="/videozaavar" element={<VideoZaavar />} />
-          <Route path="/test" element={<IntraMain />} />
-          <Route path="/test-pdf" element={<Pdf />} />
           <Route
             path="/juramzaavar/item-1"
             element={<JuramTable titleData="ZUA" icon={svg1} />}
