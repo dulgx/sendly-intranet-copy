@@ -66,15 +66,12 @@ export default function JuramTable({ titleData, icon }) {
                   {icon === svg1 ? (
                     <PdfRender
                       title={row.name}
-                      filePath={`../../../public/pdf/${row.name}.pdf`}
+                      filePath={`../../../public/pdf/sample.pdf`}
                     />
                   ) : (
                     <button
                       onClick={() =>
-                        window.open(
-                          `../../../public/pdf/${row.name}.docx`,
-                          "_blank"
-                        )
+                        window.open(`../../../public/pdf/sample.pdf`, "_blank")
                       }
                       className="text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg text-sm px-5 py-0.5 text-center me-2 mb-2 h-6"
                     >
