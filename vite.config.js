@@ -4,7 +4,6 @@ import { nodePolyfills } from "vite-plugin-node-polyfills";
 
 export default defineConfig({
   server: {
-    base: "/intranet/",
     proxy: {
       "/api": "https://192.168.90.91/apps/test_hr/intranet/test.php",
     },

@@ -14,7 +14,7 @@ import IntraMain from "./components/EmployeeInfo/IntraMain";
 function App() {
   return (
     <>
-      <Router basename="/intranet/">
+      <Router>
         <Disclosure1 />
         <Routes>
           <Route path="/" element={<Dashboard />} />
