@@ -97,7 +97,7 @@ const PdfRender = ({ title, filePath }) => {
                     key={`page_${index + 1}`}
                     pageNumber={index + 1}
                     scale={scale}
-                    className=" h-[1750px] m-5"
+                    className=" h-[1300px] m-5"
                   />
                 ))}
               </Document>
