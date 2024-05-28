@@ -12,4 +12,5 @@
 ![pageshot of 'Intranet' @ 2024-05-28-1602'39](https://github.com/dulgx/sendly-intranet-copy/assets/132341875/6e887bae-5e70-4fa3-ac72-087e5daeed14)
 ЖУРАМ ЗААВАР - Жишээ
 ![pageshot of 'Intranet' @ 2024-05-28-1602'58](https://github.com/dulgx/sendly-intranet-copy/assets/132341875/096ed352-4eee-42f2-9179-c95c71c98387)
-
+PDF файл нээх
+![pageshot of 'Intranet' @ 2024-05-28-1633'09](https://github.com/dulgx/sendly-intranet-copy/assets/132341875/901e5374-cc58-4214-bcbd-c8327fc6f42c)
